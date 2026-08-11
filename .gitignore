@@ -20,9 +20,6 @@ runtime/
 design-qa.md
 docs/audits/
 tests/contracts/
-docs/enterprise-remediation-executable-spec-v2.md
-docs/open-source-absorption-and-language-decision.md
-docs/superpowers/plans/2026-08-09-enterprise-remediation-slice-0-baseline.md
 *.db
 *.db-journal
 *.db-shm
