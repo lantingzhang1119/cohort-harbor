@@ -1,0 +1,1271 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+enum Role {
+  SUPER_ADMIN
+  ADMIN
+  EMPLOYEE
+}
+
+enum SessionViewMode {
+  ADMIN
+  EMPLOYEE
+}
+
+enum AdminIdentityEvent {
+  CREATED
+  TRANSFERRED
+  ARCHIVED
+  RESTORED
+  PERMANENTLY_DELETED
+}
+
+enum PortalViewport {
+  DESKTOP
+  MOBILE
+}
+
+enum UserStatus {
+  ACTIVE
+  DEPARTED
+  DISABLED
+  REHIRE_PENDING
+}
+
+enum WorkLocation {
+  SHANGHAI
+  SHENZHEN
+  CHANGSHA
+  XIAN
+  UNSET
+}
+
+enum UserSource {
+  MANUAL
+  EXCEL
+}
+
+enum ImportBatchStatus {
+  PREVIEW
+  READY
+  COMMITTED
+  FAILED
+}
+
+enum ConflictType {
+  DUPLICATE_EMPLOYEE_NO
+  DUPLICATE_EMAIL
+  INVALID_ROW
+  REHIRE_CONFIRMATION
+}
+
+enum ConflictResolution {
+  KEEP_FIRST
+  KEEP_LAST
+  SKIP
+  MANUAL_REIMPORT
+  RESET_PASSWORD
+  KEEP_PASSWORD
+}
+
+enum City {
+  SHANGHAI
+  SHENZHEN
+  CHANGSHA
+  XIAN
+}
+
+enum FileAssetKind {
+  GUIDE_IMAGE
+  GUIDE_MAP
+  POLICY_PDF
+  POLICY_FILE
+  POLICY_PREVIEW
+  PORTAL_IMAGE
+  ONBOARDING_MATERIAL
+  ONBOARDING_EMAIL_ASSET
+  QUESTION_BANK_SOURCE
+}
+
+enum EmployeeModuleKey {
+  GUIDES
+  ONBOARDING_KIT
+  POLICIES
+  EXAM
+  RESULTS
+  RETAKE
+  NOTIFICATIONS
+}
+
+enum OnboardingMaterialStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+enum OnboardingMailFieldKind {
+  BUILTIN
+  CONSTANT
+}
+
+enum OnboardingMailTemplateKind {
+  NEW_HIRE_WELCOME
+}
+
+enum OnboardingMailAttachmentRole {
+  ATTACHMENT
+  INLINE_LOGO
+  INLINE_BACKGROUND
+  INLINE_BODY
+}
+
+enum OnboardingMailCcKind {
+  USER
+  EMAIL
+}
+
+enum OnboardingMailDeliveryStatus {
+  PENDING
+  SENDING
+  SENT
+  FAILED
+  SKIPPED
+  CANCELLED
+  UNKNOWN
+}
+
+enum OnboardingMailDeliverySource {
+  AUTOMATIC
+  MANUAL
+  TEST
+  RESEND
+}
+
+enum OnboardingMailUnknownResolution {
+  CONFIRMED_DELIVERED
+  CONFIRMED_FAILED_RESEND
+}
+
+enum PolicyStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+enum PolicyPreviewStatus {
+  PENDING
+  PROCESSING
+  READY
+  FAILED
+}
+
+enum QuestionBankStatus {
+  DRAFT
+  ENABLED
+  DISABLED
+}
+
+enum QuestionBankSource {
+  ONLINE
+  WORD
+  EXCEL
+  PDF
+  OCR
+  LEGACY
+}
+
+enum QuestionBankQuestionType {
+  SINGLE_CHOICE
+  MULTIPLE_CHOICE
+  FILL_BLANK
+}
+
+enum QuestionBankImportStatus {
+  PROCESSING
+  REVIEW_READY
+  FAILED
+  CONFIRMED
+}
+
+enum ExamTaskStatus {
+  PUBLISHED
+  CLOSED
+}
+
+enum QuestionType {
+  SINGLE
+  TRUE_FALSE
+  MULTIPLE
+}
+
+enum AssignmentStatus {
+  NOT_STARTED
+  IN_PROGRESS
+  FAILED
+  RETAKE_READY
+  APPLICATION_REQUIRED
+  PENDING_APPROVAL
+  PASSED
+  OVERDUE
+}
+
+enum AttemptStatus {
+  IN_PROGRESS
+  SUBMITTED
+  EXPIRED
+}
+
+enum SubmissionReason {
+  MANUAL
+  TIMEOUT
+}
+
+enum RetakeStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+enum NotificationType {
+  REMINDER
+  EXAM_TASK_PUBLISHED
+  EXAM_DUE_24H
+  EXAM_DUE_2H
+  RETAKE_APPROVED
+  RETAKE_REJECTED
+  SYSTEM
+}
+
+model User {
+  id                 String       @id @default(cuid())
+  employeeNo         String       @unique
+  name               String
+  email              String?      @unique
+  role               Role         @default(EMPLOYEE)
+  status             UserStatus   @default(ACTIVE)
+  enabled            Boolean      @default(true)
+  workLocation       WorkLocation @default(UNSET)
+  firstDepartment    String?
+  secondDepartment   String?
+  position           String?
+  hiredAt            DateTime?
+  leftAt             DateTime?
+  sourceType         UserSource   @default(MANUAL)
+  passwordHash       String
+  mustChangePassword Boolean      @default(true)
+  failedLoginCount   Int          @default(0)
+  lockedUntil        DateTime?
+  adminArchivedAt    DateTime?
+  createdAt          DateTime     @default(now())
+  updatedAt          DateTime     @updatedAt
+
+  sessions                 Session[]
+  rosterImports            RosterImportBatch[]              @relation("RosterImportActor")
+  guideRevisions           GuideRevision[]                  @relation("GuideRevisionActor")
+  uploadedFiles            FileAsset[]                      @relation("FileUploadActor")
+  policyViews              PolicyViewLog[]
+  examAssignments          ExamAssignment[]
+  retakeRequests           RetakeApplication[]              @relation("RetakeRequester")
+  retakeReviews            RetakeApplication[]              @relation("RetakeReviewer")
+  notifications            Notification[]
+  reminderRecipients       SimulatedEmailLog[]              @relation("SimulatedEmailRecipient")
+  reminderActors           SimulatedEmailLog[]              @relation("SimulatedEmailActor")
+  auditLogs                AuditLog[]                       @relation("AuditActor")
+  passwordResetTokens      PasswordResetToken[]
+  adminIdentitySubjects    AdminIdentityHistory[]           @relation("AdminIdentitySubject")
+  adminIdentityActors      AdminIdentityHistory[]           @relation("AdminIdentityActor")
+  portalDrafts             GuidePortalDraft[]               @relation("PortalDraftActor")
+  portalPublications       GuidePortalPublication[]         @relation("PortalPublicationActor")
+  moduleSettingUpdates     EmployeeModuleSetting[]          @relation("EmployeeModuleSettingActor")
+  onboardingCreated        OnboardingMaterial[]             @relation("OnboardingMaterialCreator")
+  onboardingUpdated        OnboardingMaterial[]             @relation("OnboardingMaterialUpdater")
+  onboardingUploads        OnboardingMaterialVersion[]      @relation("OnboardingMaterialVersionUploader")
+  mailFieldUpdates         OnboardingMailField[]            @relation("OnboardingMailFieldUpdater")
+  mailTemplateUpdates      OnboardingMailTemplate[]         @relation("OnboardingMailTemplateUpdater")
+  mailRevisionPublishes    OnboardingMailTemplateRevision[] @relation("OnboardingMailRevisionPublisher")
+  mailDraftCcEntries       OnboardingMailDraftCc[]          @relation("OnboardingMailDraftCcUser")
+  mailRevisionCcEntries    OnboardingMailRevisionCc[]       @relation("OnboardingMailRevisionCcUser")
+  mailDeliveryRecipients   OnboardingMailDelivery[]         @relation("OnboardingMailDeliveryRecipient")
+  mailDeliveryActors       OnboardingMailDelivery[]         @relation("OnboardingMailDeliveryActor")
+  mailDeliveryResolvers    OnboardingMailDelivery[]         @relation("OnboardingMailDeliveryResolver")
+  policyDeletes            Policy[]                         @relation("PolicyDeleteActor")
+  policyVersionDeletes     PolicyVersion[]                  @relation("PolicyVersionDeleteActor")
+  onboardingDeletes        OnboardingMaterial[]             @relation("OnboardingMaterialDeleteActor")
+  onboardingVersionDeletes OnboardingMaterialVersion[]      @relation("OnboardingMaterialVersionDeleteActor")
+  questionBanksCreated     QuestionBank[]                   @relation("QuestionBankCreator")
+  questionBanksUpdated     QuestionBank[]                   @relation("QuestionBankUpdater")
+  questionBanksDeleted     QuestionBank[]                   @relation("QuestionBankDeleteActor")
+  questionBankImports      QuestionBankImportJob[]          @relation("QuestionBankImportActor")
+  examTasksPublished       ExamTask[]                       @relation("ExamTaskPublisher")
+  examTaskAssignments      ExamTaskAssignment[]
+  examTaskRetakeRequests   ExamTaskRetakeApplication[]      @relation("ExamTaskRetakeRequester")
+  examTaskRetakeReviews    ExamTaskRetakeApplication[]      @relation("ExamTaskRetakeReviewer")
+
+  @@index([name])
+  @@index([workLocation])
+  @@index([status, enabled])
+}
+
+model Session {
+  id        String          @id @default(cuid())
+  tokenHash String          @unique
+  userId    String
+  viewMode  SessionViewMode @default(EMPLOYEE)
+  expiresAt DateTime
+  createdAt DateTime        @default(now())
+  revokedAt DateTime?
+  user      User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, expiresAt])
+}
+
+model RosterImportBatch {
+  id               String            @id @default(cuid())
+  sourceName       String
+  originalFileName String
+  fileHash         String
+  status           ImportBatchStatus @default(PREVIEW)
+  totalRows        Int               @default(0)
+  createdCount     Int               @default(0)
+  updatedCount     Int               @default(0)
+  disabledCount    Int               @default(0)
+  restoredCount    Int               @default(0)
+  skippedCount     Int               @default(0)
+  conflictCount    Int               @default(0)
+  errorCount       Int               @default(0)
+  previewPayload   Json?
+  actorId          String?
+  actorSnapshot    Json
+  createdAt        DateTime          @default(now())
+  committedAt      DateTime?
+  actor            User?             @relation("RosterImportActor", fields: [actorId], references: [id], onDelete: SetNull)
+  conflicts        RosterConflict[]
+
+  @@index([createdAt])
+}
+
+model RosterConflict {
+  id         String              @id @default(cuid())
+  batchId    String
+  rowNumber  Int
+  type       ConflictType
+  rowPayload Json
+  resolution ConflictResolution?
+  resolvedAt DateTime?
+  batch      RosterImportBatch   @relation(fields: [batchId], references: [id], onDelete: Cascade)
+
+  @@index([batchId, type])
+}
+
+model CityGuide {
+  id        String          @id @default(cuid())
+  city      City            @unique
+  title     String
+  summary   String?
+  enabled   Boolean         @default(true)
+  createdAt DateTime        @default(now())
+  updatedAt DateTime        @updatedAt
+  chapters  GuideChapter[]
+  revisions GuideRevision[]
+}
+
+model GuideChapter {
+  id           String     @id @default(cuid())
+  guideId      String
+  title        String
+  body         String?
+  address      String?
+  contact      String?
+  externalUrl  String?
+  sortOrder    Int        @default(0)
+  enabled      Boolean    @default(true)
+  imageAssetId String?
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+  guide        CityGuide  @relation(fields: [guideId], references: [id], onDelete: Cascade)
+  imageAsset   FileAsset? @relation(fields: [imageAssetId], references: [id], onDelete: SetNull)
+
+  @@index([guideId, sortOrder])
+}
+
+model GuideRevision {
+  id            String    @id @default(cuid())
+  guideId       String
+  actorId       String?
+  actorSnapshot Json
+  summary       String
+  snapshot      Json
+  createdAt     DateTime  @default(now())
+  guide         CityGuide @relation(fields: [guideId], references: [id], onDelete: Cascade)
+  actor         User?     @relation("GuideRevisionActor", fields: [actorId], references: [id], onDelete: SetNull)
+
+  @@index([guideId, createdAt])
+}
+
+model FileAsset {
+  id                      String                             @id @default(cuid())
+  kind                    FileAssetKind
+  storageKey              String                             @unique
+  originalName            String
+  mimeType                String
+  sizeBytes               Int
+  sha256                  String
+  uploadedById            String?
+  uploadedBySnapshot      Json
+  createdAt               DateTime                           @default(now())
+  uploadedBy              User?                              @relation("FileUploadActor", fields: [uploadedById], references: [id], onDelete: SetNull)
+  guideChapters           GuideChapter[]
+  policyVersions          PolicyVersion[]                    @relation("PolicyOriginalAsset")
+  policyPreviewVersions   PolicyVersion[]                    @relation("PolicyPreviewAsset")
+  portalReferences        GuidePortalAssetReference[]
+  portalAssetMetadata     GuidePortalAssetMetadata?
+  onboardingVersions      OnboardingMaterialVersion[]
+  mailDraftAttachments    OnboardingMailDraftAttachment[]
+  mailRevisionAttachments OnboardingMailRevisionAttachment[]
+  questionBankSources     QuestionBank[]
+  questionBankImports     QuestionBankImportJob[]
+}
+
+model Policy {
+  id                 String          @id @default(cuid())
+  name               String
+  category           String
+  applicableCities   Json
+  status             PolicyStatus    @default(DRAFT)
+  sortOrder          Int             @default(0)
+  deletedAt          DateTime?
+  deletedById        String?
+  deletedBySnapshot  Json?
+  statusBeforeDelete PolicyStatus?
+  createdAt          DateTime        @default(now())
+  updatedAt          DateTime        @updatedAt
+  versions           PolicyVersion[]
+  deletedBy          User?           @relation("PolicyDeleteActor", fields: [deletedById], references: [id], onDelete: SetNull)
+
+  @@index([status, sortOrder])
+  @@index([category])
+  @@index([deletedAt])
+}
+
+model PolicyVersion {
+  id                 String              @id @default(cuid())
+  policyId           String
+  versionNumber      String
+  effectiveDate      DateTime
+  fileAssetId        String
+  previewStatus      PolicyPreviewStatus @default(PENDING)
+  previewAssetId     String?
+  previewFormat      String?
+  previewMetadata    Json?
+  previewError       String?
+  previewGeneratedAt DateTime?
+  deletedAt          DateTime?
+  deletedById        String?
+  deletedBySnapshot  Json?
+  createdAt          DateTime            @default(now())
+  policy             Policy              @relation(fields: [policyId], references: [id], onDelete: Cascade)
+  fileAsset          FileAsset           @relation("PolicyOriginalAsset", fields: [fileAssetId], references: [id])
+  previewAsset       FileAsset?          @relation("PolicyPreviewAsset", fields: [previewAssetId], references: [id], onDelete: SetNull)
+  deletedBy          User?               @relation("PolicyVersionDeleteActor", fields: [deletedById], references: [id], onDelete: SetNull)
+  views              PolicyViewLog[]
+
+  @@unique([policyId, versionNumber])
+  @@index([previewStatus])
+  @@index([deletedAt])
+}
+
+model PolicyViewLog {
+  id              String        @id @default(cuid())
+  policyVersionId String
+  userId          String
+  viewedAt        DateTime      @default(now())
+  policyVersion   PolicyVersion @relation(fields: [policyVersionId], references: [id], onDelete: Cascade)
+  user            User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, viewedAt])
+}
+
+model Exam {
+  id                    String           @id @default(cuid())
+  name                  String           @unique
+  passingScore          Int              @default(80)
+  durationMinutes       Int              @default(30)
+  dueDaysAfterHire      Int              @default(7)
+  randomizeQuestions    Boolean          @default(true)
+  randomizeOptions      Boolean          @default(true)
+  showWrongAnswers      Boolean          @default(false)
+  enabled               Boolean          @default(true)
+  createdAt             DateTime         @default(now())
+  updatedAt             DateTime         @updatedAt
+  questions             Question[]
+  assignments           ExamAssignment[]
+  migratedQuestionBanks QuestionBank[]
+}
+
+model Question {
+  id               String            @id @default(cuid())
+  examId           String
+  sequence         Int
+  type             QuestionType
+  prompt           String
+  score            Int
+  enabled          Boolean           @default(true)
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+  exam             Exam              @relation(fields: [examId], references: [id], onDelete: Cascade)
+  options          QuestionOption[]
+  attemptQuestions AttemptQuestion[]
+  answers          AttemptAnswer[]
+
+  @@unique([examId, sequence])
+}
+
+model QuestionOption {
+  id         String   @id @default(cuid())
+  questionId String
+  optionKey  String
+  text       String
+  isCorrect  Boolean  @default(false)
+  sortOrder  Int      @default(0)
+  question   Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+
+  @@unique([questionId, optionKey])
+  @@index([questionId, sortOrder])
+}
+
+model QuestionBank {
+  id                 String                  @id @default(cuid())
+  name               String
+  description        String?
+  isDefault          Boolean                 @default(false)
+  status             QuestionBankStatus      @default(DRAFT)
+  source             QuestionBankSource      @default(ONLINE)
+  sourceFileAssetId  String?
+  legacyExamId       String?                 @unique
+  versionNumber      Int                     @default(1)
+  passingScore       Int                     @default(80)
+  durationMinutes    Int                     @default(30)
+  randomizeQuestions Boolean                 @default(true)
+  randomizeOptions   Boolean                 @default(true)
+  showWrongAnswers   Boolean                 @default(false)
+  enabledScore       Int                     @default(0)
+  questionCount      Int                     @default(0)
+  createdById        String?
+  createdBySnapshot  Json
+  updatedById        String?
+  updatedBySnapshot  Json
+  deletedAt          DateTime?
+  deletedById        String?
+  deletedBySnapshot  Json?
+  statusBeforeDelete QuestionBankStatus?
+  createdAt          DateTime                @default(now())
+  updatedAt          DateTime                @updatedAt
+  sourceFileAsset    FileAsset?              @relation(fields: [sourceFileAssetId], references: [id], onDelete: SetNull)
+  legacyExam         Exam?                   @relation(fields: [legacyExamId], references: [id], onDelete: SetNull)
+  createdBy          User?                   @relation("QuestionBankCreator", fields: [createdById], references: [id], onDelete: SetNull)
+  updatedBy          User?                   @relation("QuestionBankUpdater", fields: [updatedById], references: [id], onDelete: SetNull)
+  deletedBy          User?                   @relation("QuestionBankDeleteActor", fields: [deletedById], references: [id], onDelete: SetNull)
+  questions          QuestionBankQuestion[]
+  importJobs         QuestionBankImportJob[]
+  snapshots          ExamPaperSnapshot[]
+  tasks              ExamTask[]
+
+  @@index([status, updatedAt])
+  @@index([deletedAt])
+  @@index([source])
+}
+
+model QuestionBankQuestion {
+  id             String                    @id @default(cuid())
+  questionBankId String
+  sequence       Int
+  type           QuestionBankQuestionType
+  prompt         String
+  score          Int
+  enabled        Boolean                   @default(true)
+  createdAt      DateTime                  @default(now())
+  updatedAt      DateTime                  @updatedAt
+  questionBank   QuestionBank              @relation(fields: [questionBankId], references: [id], onDelete: Cascade)
+  options        QuestionBankOption[]
+  blankAnswers   QuestionBankBlankAnswer[]
+
+  @@unique([questionBankId, sequence])
+  @@index([questionBankId, enabled])
+}
+
+model QuestionBankOption {
+  id         String               @id @default(cuid())
+  questionId String
+  label      String
+  text       String
+  isCorrect  Boolean              @default(false)
+  sortOrder  Int                  @default(0)
+  question   QuestionBankQuestion @relation(fields: [questionId], references: [id], onDelete: Cascade)
+
+  @@unique([questionId, label])
+  @@index([questionId, sortOrder])
+}
+
+model QuestionBankBlankAnswer {
+  id                String               @id @default(cuid())
+  questionId        String
+  blankIndex        Int
+  acceptableAnswers Json
+  sortOrder         Int                  @default(0)
+  question          QuestionBankQuestion @relation(fields: [questionId], references: [id], onDelete: Cascade)
+
+  @@unique([questionId, blankIndex])
+  @@index([questionId, sortOrder])
+}
+
+model QuestionBankImportJob {
+  id                String                   @id @default(cuid())
+  questionBankId    String?
+  sourceFileAssetId String
+  source            QuestionBankSource
+  status            QuestionBankImportStatus @default(PROCESSING)
+  originalName      String
+  parsedPayload     Json?
+  warnings          Json?
+  errorMessage      String?
+  ocrLanguage       String?
+  createdById       String?
+  createdBySnapshot Json
+  createdAt         DateTime                 @default(now())
+  updatedAt         DateTime                 @updatedAt
+  confirmedAt       DateTime?
+  questionBank      QuestionBank?            @relation(fields: [questionBankId], references: [id], onDelete: SetNull)
+  sourceFileAsset   FileAsset                @relation(fields: [sourceFileAssetId], references: [id], onDelete: Restrict)
+  createdBy         User?                    @relation("QuestionBankImportActor", fields: [createdById], references: [id], onDelete: SetNull)
+
+  @@index([status, createdAt])
+  @@index([questionBankId])
+}
+
+model ExamPaperSnapshot {
+  id                  String       @id @default(cuid())
+  questionBankId      String
+  questionBankVersion Int
+  questionBankName    String
+  questions           Json
+  questionCount       Int
+  totalScore          Int
+  passingScore        Int
+  createdAt           DateTime     @default(now())
+  questionBank        QuestionBank @relation(fields: [questionBankId], references: [id], onDelete: Restrict)
+  task                ExamTask?
+
+  @@index([questionBankId, createdAt])
+}
+
+model ExamTask {
+  id                  String               @id @default(cuid())
+  idempotencyKey      String               @unique
+  name                String
+  description         String?
+  questionBankId      String
+  snapshotId          String               @unique
+  startsAt            DateTime
+  endsAt              DateTime
+  passingScore        Int                  @default(80)
+  status              ExamTaskStatus       @default(PUBLISHED)
+  publishedById       String?
+  publishedBySnapshot Json
+  publishedAt         DateTime             @default(now())
+  createdAt           DateTime             @default(now())
+  updatedAt           DateTime             @updatedAt
+  questionBank        QuestionBank         @relation(fields: [questionBankId], references: [id], onDelete: Restrict)
+  snapshot            ExamPaperSnapshot    @relation(fields: [snapshotId], references: [id], onDelete: Restrict)
+  publishedBy         User?                @relation("ExamTaskPublisher", fields: [publishedById], references: [id], onDelete: SetNull)
+  assignments         ExamTaskAssignment[]
+
+  @@index([status, startsAt, endsAt])
+  @@index([questionBankId, publishedAt])
+}
+
+model ExamTaskAssignment {
+  id                  String                      @id @default(cuid())
+  taskId              String
+  userId              String
+  status              AssignmentStatus            @default(NOT_STARTED)
+  currentAttemptCount Int                         @default(0)
+  score               Int?
+  passed              Boolean?
+  startedAt           DateTime?
+  submittedAt         DateTime?
+  expiredAt           DateTime?
+  processedAt         DateTime?
+  createdAt           DateTime                    @default(now())
+  updatedAt           DateTime                    @updatedAt
+  task                ExamTask                    @relation(fields: [taskId], references: [id], onDelete: Cascade)
+  user                User                        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  attempts            ExamTaskAttempt[]
+  notifications       Notification[]
+  retakeApplications  ExamTaskRetakeApplication[]
+
+  @@unique([taskId, userId])
+  @@index([userId, status])
+  @@index([status, taskId])
+}
+
+model ExamTaskAttempt {
+  id               String             @id @default(cuid())
+  assignmentId     String
+  attemptNo        Int
+  status           AttemptStatus      @default(IN_PROGRESS)
+  startedAt        DateTime           @default(now())
+  expiresAt        DateTime
+  submittedAt      DateTime?
+  elapsedSeconds   Int?
+  score            Int?
+  passed           Boolean?
+  submissionReason SubmissionReason?
+  assignment       ExamTaskAssignment @relation(fields: [assignmentId], references: [id], onDelete: Cascade)
+  answers          ExamTaskAnswer[]
+
+  @@unique([assignmentId, attemptNo])
+  @@index([status, expiresAt])
+}
+
+model ExamTaskAnswer {
+  id           String          @id @default(cuid())
+  attemptId    String
+  questionId   String
+  response     Json
+  awardedScore Int?
+  savedAt      DateTime        @updatedAt
+  attempt      ExamTaskAttempt @relation(fields: [attemptId], references: [id], onDelete: Cascade)
+
+  @@unique([attemptId, questionId])
+}
+
+model ExamTaskRetakeApplication {
+  id               String             @id @default(cuid())
+  assignmentId     String
+  requesterId      String
+  reason           String
+  status           RetakeStatus       @default(PENDING)
+  reviewerId       String?
+  reviewerSnapshot Json?
+  reviewNote       String?
+  createdAt        DateTime           @default(now())
+  reviewedAt       DateTime?
+  assignment       ExamTaskAssignment @relation(fields: [assignmentId], references: [id], onDelete: Cascade)
+  requester        User               @relation("ExamTaskRetakeRequester", fields: [requesterId], references: [id])
+  reviewer         User?              @relation("ExamTaskRetakeReviewer", fields: [reviewerId], references: [id], onDelete: SetNull)
+
+  @@index([status, createdAt])
+}
+
+model ExamAssignment {
+  id                 String              @id @default(cuid())
+  userId             String
+  examId             String
+  status             AssignmentStatus    @default(NOT_STARTED)
+  dueAt              DateTime
+  allowedAttempts    Int                 @default(1)
+  createdAt          DateTime            @default(now())
+  updatedAt          DateTime            @updatedAt
+  user               User                @relation(fields: [userId], references: [id], onDelete: Cascade)
+  exam               Exam                @relation(fields: [examId], references: [id], onDelete: Cascade)
+  attempts           ExamAttempt[]
+  retakeApplications RetakeApplication[]
+
+  @@unique([userId, examId])
+  @@index([status, dueAt])
+}
+
+model ExamAttempt {
+  id               String            @id @default(cuid())
+  assignmentId     String
+  attemptNo        Int
+  status           AttemptStatus     @default(IN_PROGRESS)
+  startedAt        DateTime          @default(now())
+  expiresAt        DateTime
+  submittedAt      DateTime?
+  elapsedSeconds   Int?
+  score            Int?
+  passed           Boolean?
+  submissionReason SubmissionReason?
+  assignment       ExamAssignment    @relation(fields: [assignmentId], references: [id], onDelete: Cascade)
+  questions        AttemptQuestion[]
+  answers          AttemptAnswer[]
+
+  @@unique([assignmentId, attemptNo])
+  @@index([status, expiresAt])
+}
+
+model AttemptQuestion {
+  id                String       @id @default(cuid())
+  attemptId         String
+  questionId        String
+  displayOrder      Int
+  promptSnapshot    String
+  typeSnapshot      QuestionType
+  scoreSnapshot     Int
+  optionSnapshot    Json
+  correctOptionKeys Json
+  attempt           ExamAttempt  @relation(fields: [attemptId], references: [id], onDelete: Cascade)
+  question          Question     @relation(fields: [questionId], references: [id])
+
+  @@unique([attemptId, questionId])
+  @@index([attemptId, displayOrder])
+}
+
+model AttemptAnswer {
+  id           String      @id @default(cuid())
+  attemptId    String
+  questionId   String
+  selectedKeys Json
+  awardedScore Int?
+  savedAt      DateTime    @updatedAt
+  attempt      ExamAttempt @relation(fields: [attemptId], references: [id], onDelete: Cascade)
+  question     Question    @relation(fields: [questionId], references: [id])
+
+  @@unique([attemptId, questionId])
+}
+
+model RetakeApplication {
+  id               String         @id @default(cuid())
+  assignmentId     String
+  requesterId      String
+  reason           String
+  status           RetakeStatus   @default(PENDING)
+  reviewerId       String?
+  reviewerSnapshot Json?
+  reviewNote       String?
+  createdAt        DateTime       @default(now())
+  reviewedAt       DateTime?
+  assignment       ExamAssignment @relation(fields: [assignmentId], references: [id], onDelete: Cascade)
+  requester        User           @relation("RetakeRequester", fields: [requesterId], references: [id])
+  reviewer         User?          @relation("RetakeReviewer", fields: [reviewerId], references: [id], onDelete: SetNull)
+
+  @@index([status, createdAt])
+}
+
+model Notification {
+  id                   String              @id @default(cuid())
+  userId               String
+  type                 NotificationType
+  title                String
+  body                 String
+  href                 String?
+  examTaskAssignmentId String?
+  dedupeKey            String?             @unique
+  readAt               DateTime?
+  createdAt            DateTime            @default(now())
+  user                 User                @relation(fields: [userId], references: [id], onDelete: Cascade)
+  examTaskAssignment   ExamTaskAssignment? @relation(fields: [examTaskAssignmentId], references: [id], onDelete: Cascade)
+
+  @@index([userId, readAt, createdAt])
+  @@index([examTaskAssignmentId, type])
+}
+
+model SimulatedEmailLog {
+  id                String   @id @default(cuid())
+  recipientId       String?
+  recipientSnapshot Json
+  actorId           String?
+  actorSnapshot     Json?
+  templateKey       String
+  status            String   @default("SIMULATED_NO_SMTP")
+  createdAt         DateTime @default(now())
+  recipient         User?    @relation("SimulatedEmailRecipient", fields: [recipientId], references: [id], onDelete: SetNull)
+  actor             User?    @relation("SimulatedEmailActor", fields: [actorId], references: [id], onDelete: SetNull)
+
+  @@index([createdAt])
+}
+
+model SystemSetting {
+  id                                  String    @id @default("default")
+  watermarkOpacity                    Float     @default(0.07)
+  defaultExamMinutes                  Int       @default(30)
+  defaultDueDays                      Int       @default(7)
+  showWrongAnswers                    Boolean   @default(false)
+  onboardingMailAutomationEnabled     Boolean   @default(false)
+  onboardingMailAutomationEnabledAt   DateTime?
+  onboardingMailAutomationEnabledById String?
+  updatedAt                           DateTime  @updatedAt
+}
+
+model AuditLog {
+  id            String   @id @default(cuid())
+  actorId       String?
+  actorSnapshot Json?
+  action        String
+  targetType    String?
+  targetId      String?
+  result        String
+  metadata      Json?
+  createdAt     DateTime @default(now())
+  actor         User?    @relation("AuditActor", fields: [actorId], references: [id], onDelete: SetNull)
+
+  @@index([createdAt])
+  @@index([actorId, createdAt])
+}
+
+model PasswordResetToken {
+  id                 String    @id @default(cuid())
+  tokenHash          String    @unique
+  userId             String
+  expiresAt          DateTime
+  usedAt             DateTime?
+  deliveredAt        DateTime?
+  deliveryFailedAt   DateTime?
+  requestFingerprint String
+  createdAt          DateTime  @default(now())
+  user               User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, createdAt])
+}
+
+model AdminIdentityHistory {
+  id               String             @id @default(cuid())
+  subjectAccountId String
+  subjectId        String?
+  actorId          String?
+  event            AdminIdentityEvent
+  beforeSnapshot   Json?
+  afterSnapshot    Json?
+  createdAt        DateTime           @default(now())
+  subject          User?              @relation("AdminIdentitySubject", fields: [subjectId], references: [id], onDelete: SetNull)
+  actor            User?              @relation("AdminIdentityActor", fields: [actorId], references: [id], onDelete: SetNull)
+
+  @@index([subjectAccountId, createdAt])
+}
+
+model GuidePortalDraft {
+  id                String                      @id @default(cuid())
+  city              City
+  viewport          PortalViewport
+  canvasWidth       Int
+  canvasHeight      Int
+  elements          Json
+  sceneVersion      Int                         @default(0)
+  scene             Json?
+  legacyElements    Json?
+  draftRevision     Int                         @default(0)
+  updatedById       String?
+  updatedBySnapshot Json
+  updatedAt         DateTime                    @updatedAt
+  updatedBy         User?                       @relation("PortalDraftActor", fields: [updatedById], references: [id], onDelete: SetNull)
+  assetReferences   GuidePortalAssetReference[]
+
+  @@unique([city, viewport])
+}
+
+model GuidePortalAssetMetadata {
+  assetId               String    @id
+  category              String
+  width                 Int?
+  height                Int?
+  frameCount            Int?
+  decodedCostBytes      BigInt?
+  inspectionStatus      String
+  incompatibilityReason String?
+  inspectedAt           DateTime?
+  asset                 FileAsset @relation(fields: [assetId], references: [id], onDelete: Cascade)
+
+  @@index([category, inspectionStatus])
+}
+
+model GuidePortalPublication {
+  id                  String                      @id @default(cuid())
+  city                City
+  viewport            PortalViewport
+  version             Int
+  canvasWidth         Int
+  canvasHeight        Int
+  elements            Json
+  sceneVersion        Int                         @default(0)
+  scene               Json?
+  legacyElements      Json?
+  publishedById       String?
+  publishedBySnapshot Json
+  createdAt           DateTime                    @default(now())
+  publishedBy         User?                       @relation("PortalPublicationActor", fields: [publishedById], references: [id], onDelete: SetNull)
+  assetReferences     GuidePortalAssetReference[]
+
+  @@unique([city, viewport, version])
+  @@index([city, viewport, createdAt])
+}
+
+model GuidePortalAssetReference {
+  id            String                  @id @default(cuid())
+  assetId       String
+  draftId       String?
+  publicationId String?
+  elementId     String
+  asset         FileAsset               @relation(fields: [assetId], references: [id], onDelete: Restrict)
+  draft         GuidePortalDraft?       @relation(fields: [draftId], references: [id], onDelete: Cascade)
+  publication   GuidePortalPublication? @relation(fields: [publicationId], references: [id], onDelete: Cascade)
+
+  @@unique([draftId, elementId])
+  @@unique([publicationId, elementId])
+  @@index([assetId])
+}
+
+model EmployeeModuleSetting {
+  key               EmployeeModuleKey @id
+  enabled           Boolean           @default(true)
+  updatedById       String?
+  updatedBySnapshot Json?
+  updatedAt         DateTime          @updatedAt
+  updatedBy         User?             @relation("EmployeeModuleSettingActor", fields: [updatedById], references: [id], onDelete: SetNull)
+}
+
+model OnboardingMaterial {
+  id                 String                      @id @default(cuid())
+  title              String
+  category           String
+  description        String?
+  sortOrder          Int                         @default(0)
+  status             OnboardingMaterialStatus    @default(DRAFT)
+  deletedAt          DateTime?
+  deletedById        String?
+  deletedBySnapshot  Json?
+  statusBeforeDelete OnboardingMaterialStatus?
+  currentVersionId   String?                     @unique
+  createdById        String?
+  createdBySnapshot  Json
+  updatedById        String?
+  updatedBySnapshot  Json
+  createdAt          DateTime                    @default(now())
+  updatedAt          DateTime                    @updatedAt
+  versions           OnboardingMaterialVersion[] @relation("OnboardingMaterialVersions")
+  currentVersion     OnboardingMaterialVersion?  @relation("OnboardingMaterialCurrentVersion", fields: [currentVersionId], references: [id], onDelete: SetNull)
+  createdBy          User?                       @relation("OnboardingMaterialCreator", fields: [createdById], references: [id], onDelete: SetNull)
+  updatedBy          User?                       @relation("OnboardingMaterialUpdater", fields: [updatedById], references: [id], onDelete: SetNull)
+  deletedBy          User?                       @relation("OnboardingMaterialDeleteActor", fields: [deletedById], references: [id], onDelete: SetNull)
+
+  @@index([status, sortOrder])
+  @@index([category, sortOrder])
+  @@index([deletedAt])
+}
+
+model OnboardingMaterialVersion {
+  id                      String                             @id @default(cuid())
+  materialId              String
+  versionNumber           Int
+  fileAssetId             String                             @unique
+  originalName            String
+  displayName             String
+  extension               String
+  mimeType                String
+  sizeBytes               Int
+  sha256                  String
+  deletedAt               DateTime?
+  deletedById             String?
+  deletedBySnapshot       Json?
+  uploadedById            String?
+  uploadedBySnapshot      Json
+  createdAt               DateTime                           @default(now())
+  material                OnboardingMaterial                 @relation("OnboardingMaterialVersions", fields: [materialId], references: [id], onDelete: Cascade)
+  currentFor              OnboardingMaterial?                @relation("OnboardingMaterialCurrentVersion")
+  fileAsset               FileAsset                          @relation(fields: [fileAssetId], references: [id], onDelete: Restrict)
+  uploadedBy              User?                              @relation("OnboardingMaterialVersionUploader", fields: [uploadedById], references: [id], onDelete: SetNull)
+  deletedBy               User?                              @relation("OnboardingMaterialVersionDeleteActor", fields: [deletedById], references: [id], onDelete: SetNull)
+  mailDraftAttachments    OnboardingMailDraftAttachment[]
+  mailRevisionAttachments OnboardingMailRevisionAttachment[]
+
+  @@unique([materialId, versionNumber])
+  @@index([materialId, createdAt])
+  @@index([deletedAt])
+}
+
+model OnboardingMailField {
+  id                String                  @id @default(cuid())
+  key               String                  @unique
+  kind              OnboardingMailFieldKind @default(BUILTIN)
+  builtIn           Boolean                 @default(true)
+  label             String
+  enabled           Boolean                 @default(true)
+  sortOrder         Int                     @default(0)
+  dateFormat        String?
+  required          Boolean                 @default(false)
+  constantValue     String?
+  updatedById       String?
+  updatedBySnapshot Json?
+  createdAt         DateTime                @default(now())
+  updatedAt         DateTime                @updatedAt
+  updatedBy         User?                   @relation("OnboardingMailFieldUpdater", fields: [updatedById], references: [id], onDelete: SetNull)
+
+  @@index([enabled, sortOrder])
+}
+
+model OnboardingMailTemplate {
+  id                String                           @id @default(cuid())
+  kind              OnboardingMailTemplateKind       @unique
+  name              String
+  enabled           Boolean                          @default(false)
+  defaultSendTime   String                           @default("09:00")
+  timezone          String                           @default("Asia/Shanghai")
+  draftSenderName   String?
+  draftSubject      String?
+  draftHtmlBody     String?
+  draftTextBody     String?
+  draftFieldConfig  Json?
+  draftStyleConfig  Json?
+  currentRevisionId String?                          @unique
+  updatedById       String?
+  updatedBySnapshot Json?
+  createdAt         DateTime                         @default(now())
+  updatedAt         DateTime                         @updatedAt
+  revisions         OnboardingMailTemplateRevision[] @relation("OnboardingMailTemplateRevisions")
+  currentRevision   OnboardingMailTemplateRevision?  @relation("OnboardingMailCurrentRevision", fields: [currentRevisionId], references: [id], onDelete: SetNull)
+  draftAttachments  OnboardingMailDraftAttachment[]
+  draftCcEntries    OnboardingMailDraftCc[]
+  updatedBy         User?                            @relation("OnboardingMailTemplateUpdater", fields: [updatedById], references: [id], onDelete: SetNull)
+
+  @@index([enabled, kind])
+}
+
+model OnboardingMailTemplateRevision {
+  id                  String                             @id @default(cuid())
+  templateId          String
+  revisionNumber      Int
+  senderDisplayName   String
+  subject             String
+  htmlBody            String
+  textBody            String
+  fieldConfig         Json
+  styleConfig         Json
+  publishedById       String?
+  publishedBySnapshot Json
+  createdAt           DateTime                           @default(now())
+  template            OnboardingMailTemplate             @relation("OnboardingMailTemplateRevisions", fields: [templateId], references: [id], onDelete: Cascade)
+  currentFor          OnboardingMailTemplate?            @relation("OnboardingMailCurrentRevision")
+  attachments         OnboardingMailRevisionAttachment[]
+  ccEntries           OnboardingMailRevisionCc[]
+  deliveries          OnboardingMailDelivery[]
+  publishedBy         User?                              @relation("OnboardingMailRevisionPublisher", fields: [publishedById], references: [id], onDelete: SetNull)
+
+  @@unique([templateId, revisionNumber])
+  @@index([templateId, createdAt])
+}
+
+model OnboardingMailDraftAttachment {
+  id                String                       @id @default(cuid())
+  templateId        String
+  role              OnboardingMailAttachmentRole @default(ATTACHMENT)
+  fileAssetId       String?
+  materialVersionId String?
+  displayName       String
+  contentId         String?
+  sortOrder         Int                          @default(0)
+  createdAt         DateTime                     @default(now())
+  template          OnboardingMailTemplate       @relation(fields: [templateId], references: [id], onDelete: Cascade)
+  fileAsset         FileAsset?                   @relation(fields: [fileAssetId], references: [id], onDelete: Restrict)
+  materialVersion   OnboardingMaterialVersion?   @relation(fields: [materialVersionId], references: [id], onDelete: Restrict)
+
+  @@index([templateId, sortOrder])
+  @@index([fileAssetId])
+  @@index([materialVersionId])
+}
+
+model OnboardingMailRevisionAttachment {
+  id                String                         @id @default(cuid())
+  revisionId        String
+  role              OnboardingMailAttachmentRole   @default(ATTACHMENT)
+  fileAssetId       String?
+  materialVersionId String?
+  displayName       String
+  contentId         String?
+  sortOrder         Int                            @default(0)
+  revision          OnboardingMailTemplateRevision @relation(fields: [revisionId], references: [id], onDelete: Cascade)
+  fileAsset         FileAsset?                     @relation(fields: [fileAssetId], references: [id], onDelete: Restrict)
+  materialVersion   OnboardingMaterialVersion?     @relation(fields: [materialVersionId], references: [id], onDelete: Restrict)
+
+  @@index([revisionId, sortOrder])
+  @@index([fileAssetId])
+  @@index([materialVersionId])
+}
+
+model OnboardingMailDraftCc {
+  id          String                 @id @default(cuid())
+  templateId  String
+  kind        OnboardingMailCcKind
+  userId      String?
+  email       String?
+  displayName String?
+  sortOrder   Int                    @default(0)
+  template    OnboardingMailTemplate @relation(fields: [templateId], references: [id], onDelete: Cascade)
+  user        User?                  @relation("OnboardingMailDraftCcUser", fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([templateId, sortOrder])
+  @@index([userId])
+}
+
+model OnboardingMailRevisionCc {
+  id           String                         @id @default(cuid())
+  revisionId   String
+  kind         OnboardingMailCcKind
+  userId       String?
+  userSnapshot Json?
+  email        String?
+  displayName  String?
+  sortOrder    Int                            @default(0)
+  revision     OnboardingMailTemplateRevision @relation(fields: [revisionId], references: [id], onDelete: Cascade)
+  user         User?                          @relation("OnboardingMailRevisionCcUser", fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([revisionId, sortOrder])
+  @@index([userId])
+}
+
+model OnboardingMailDelivery {
+  id                      String                           @id @default(cuid())
+  status                  OnboardingMailDeliveryStatus     @default(PENDING)
+  source                  OnboardingMailDeliverySource
+  idempotencyKey          String?                          @unique
+  recipientId             String?
+  recipientEmailSnapshot  String
+  recipientSnapshot       Json
+  templateRevisionId      String
+  templateSnapshot        Json
+  fieldSummary            Json
+  ccSnapshot              Json
+  attachmentSummary       Json
+  scheduledLocalDate      String?
+  scheduledAt             DateTime
+  startedAt               DateTime?
+  dispatchedAt            DateTime?
+  sentAt                  DateTime?
+  nextRetryAt             DateTime?
+  attemptCount            Int                              @default(0)
+  retryable               Boolean                          @default(false)
+  workerId                String?
+  leaseExpiresAt          DateTime?
+  leaseGeneration         Int                              @default(0)
+  actorId                 String?
+  actorSnapshot           Json?
+  failureCode             String?
+  errorSummary            String?
+  providerMessageId       String?
+  responseSummary         String?
+  unknownResolution       OnboardingMailUnknownResolution?
+  unknownResolvedAt       DateTime?
+  unknownResolvedById     String?
+  unknownResolverSnapshot Json?
+  unknownResolutionNote   String?
+  resendOfId              String?                          @unique
+  createdAt               DateTime                         @default(now())
+  updatedAt               DateTime                         @updatedAt
+  recipient               User?                            @relation("OnboardingMailDeliveryRecipient", fields: [recipientId], references: [id], onDelete: SetNull)
+  templateRevision        OnboardingMailTemplateRevision   @relation(fields: [templateRevisionId], references: [id], onDelete: Restrict)
+  actor                   User?                            @relation("OnboardingMailDeliveryActor", fields: [actorId], references: [id], onDelete: SetNull)
+  unknownResolvedBy       User?                            @relation("OnboardingMailDeliveryResolver", fields: [unknownResolvedById], references: [id], onDelete: SetNull)
+  resendOf                OnboardingMailDelivery?          @relation("OnboardingMailDeliveryResend", fields: [resendOfId], references: [id], onDelete: SetNull)
+  resendDelivery          OnboardingMailDelivery?          @relation("OnboardingMailDeliveryResend")
+
+  @@index([status, scheduledAt])
+  @@index([status, nextRetryAt])
+  @@index([recipientId, createdAt])
+  @@index([templateRevisionId, createdAt])
+  @@index([workerId, leaseGeneration])
+}
