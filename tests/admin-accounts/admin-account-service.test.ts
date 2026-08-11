@@ -19,15 +19,22 @@ import { snapshotUserIdentity } from "@/features/admin-accounts/identity-snapsho
 import { login } from "@/features/auth/login-service";
 import { hashPassword, verifyPassword } from "@/features/auth/password";
 import {
-  consumePasswordReset,
-  hashPasswordResetToken,
+  consumePasswordReset as consumePasswordResetWithSecret,
   PasswordResetError,
 } from "@/features/auth/password-reset-service";
 import { createSession, getActiveSession } from "@/features/auth/session";
+import {
+  hashTestPasswordResetToken as hashPasswordResetToken,
+  TEST_AUTH_TOKEN_SECRET,
+} from "../helpers/auth-token";
 import { createTestDatabase } from "../helpers/test-db";
 
 describe("administrator account lifecycle service", () => {
   let testDb: Awaited<ReturnType<typeof createTestDatabase>>;
+  const consumePasswordReset = (
+    dependencies: Omit<Parameters<typeof consumePasswordResetWithSecret>[0], "tokenHashSecret">,
+    input: Parameters<typeof consumePasswordResetWithSecret>[1],
+  ) => consumePasswordResetWithSecret({ ...dependencies, tokenHashSecret: TEST_AUTH_TOKEN_SECRET }, input);
   let superAdmin: Awaited<ReturnType<typeof createAdministrator>>;
   let admin: Awaited<ReturnType<typeof createAdministrator>>;
 

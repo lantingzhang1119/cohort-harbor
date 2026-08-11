@@ -1,4 +1,4 @@
-import { createHash } from "node:crypto";
+import { createHmac } from "node:crypto";
 import path from "node:path";
 
 import { z } from "zod";
@@ -23,6 +23,7 @@ export const envSchema = z.object({
   DATABASE_URL: z.string().min(1).default("file:./storage/private/demo.db"),
   ADMIN_USERNAME: z.string().min(3, "管理员账号至少需要 3 个字符"),
   ADMIN_PASSWORD: z.string().min(10, "管理员密码至少需要 10 个字符"),
+  AUTH_TOKEN_SECRET: z.string().trim().min(32, "认证令牌密钥至少需要 32 个字符"),
   ADMIN_DISPLAY_NAME: z.string().min(1).default("系统管理员"),
   SESSION_TTL_HOURS: z.coerce.number().int().positive().default(12),
   LOGIN_MAX_FAILURES: z.coerce.number().int().min(3).default(5),
@@ -66,7 +67,9 @@ export function parseEnv(input: Partial<NodeJS.ProcessEnv>): AppEnv {
   return {
     ...parsed,
     ONBOARDING_MAIL_CONFIRMATION_SECRET: parsed.ONBOARDING_MAIL_CONFIRMATION_SECRET
-      ?? createHash("sha256").update(`cohort-harbor:onboarding-mail:${parsed.ADMIN_PASSWORD}`).digest("base64url"),
+      ?? createHmac("sha256", parsed.AUTH_TOKEN_SECRET)
+        .update("cohort-harbor:onboarding-mail-confirmation:v1")
+        .digest("base64url"),
   };
 }
 

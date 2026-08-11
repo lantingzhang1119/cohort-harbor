@@ -4,13 +4,28 @@ import { envSchema, parseEnv } from "@/lib/env";
 import { parseOnboardingMailWorkerRuntimeConfig } from "@/features/onboarding-mail/worker-runtime-config";
 import { createMailConfirmationToken, verifyMailConfirmationToken } from "@/features/onboarding-mail/admin-service";
 
+const authTokenSecret = "test-only-auth-token-hmac-secret-2026";
+
 describe("parseEnv", () => {
+  it("requires an independent auth token secret", () => {
+    expect(() => parseEnv({
+      ADMIN_USERNAME: "admin",
+      ADMIN_PASSWORD: "change-me-12345",
+    })).toThrow();
+    expect(() => parseEnv({
+      ADMIN_USERNAME: "admin",
+      ADMIN_PASSWORD: "change-me-12345",
+      AUTH_TOKEN_SECRET: "too-short",
+    })).toThrow("认证令牌密钥至少需要 32 个字符");
+  });
+
   it("rejects an admin password shorter than ten characters", () => {
     expect(() =>
       parseEnv({
         DATABASE_URL: "file:./storage/private/demo.db",
         ADMIN_USERNAME: "admin",
         ADMIN_PASSWORD: "short",
+        AUTH_TOKEN_SECRET: authTokenSecret,
         ADMIN_DISPLAY_NAME: "系统管理员",
       }),
     ).toThrow("管理员密码至少需要 10 个字符");
@@ -20,6 +35,7 @@ describe("parseEnv", () => {
     const parsed = parseEnv({
       ADMIN_USERNAME: "admin",
       ADMIN_PASSWORD: "change-me-12345",
+      AUTH_TOKEN_SECRET: authTokenSecret,
       ADMIN_DISPLAY_NAME: "系统管理员",
     });
 
@@ -54,6 +70,7 @@ describe("parseEnv", () => {
     expect(() => parseEnv({
       ADMIN_USERNAME: "admin",
       ADMIN_PASSWORD: "change-me-12345",
+      AUTH_TOKEN_SECRET: authTokenSecret,
       [key]: value,
     })).toThrow();
   });
@@ -62,6 +79,7 @@ describe("parseEnv", () => {
     expect(() => parseEnv({
       ADMIN_USERNAME: "admin",
       ADMIN_PASSWORD: "change-me-12345",
+      AUTH_TOKEN_SECRET: authTokenSecret,
       ONBOARDING_ZIP_TEMP_ROOT: "/",
     })).toThrow("资料包临时目录不能是文件系统根目录");
   });
@@ -70,6 +88,7 @@ describe("parseEnv", () => {
     const parsed = parseEnv({
       ADMIN_USERNAME: "admin",
       ADMIN_PASSWORD: "change-me-12345",
+      AUTH_TOKEN_SECRET: authTokenSecret,
       SMTP_HOST: "smtp.example.invalid",
       SMTP_PORT: "587",
       SMTP_SECURE: "false",
@@ -117,6 +136,7 @@ describe("parseEnv", () => {
       const appAccepted = envSchema.safeParse({
         ADMIN_USERNAME: "admin",
         ADMIN_PASSWORD: "change-me-12345",
+        AUTH_TOKEN_SECRET: authTokenSecret,
         ...candidate,
       }).success;
       let workerAccepted = true;
@@ -136,6 +156,7 @@ describe("parseEnv", () => {
     const input = {
       ADMIN_USERNAME: "admin",
       ADMIN_PASSWORD: "change-me-12345",
+      AUTH_TOKEN_SECRET: authTokenSecret,
       ONBOARDING_MAIL_CONFIRMATION_SECRET: "mail-confirmation-secret-for-every-instance-123",
     };
     const first = parseEnv(input);
@@ -151,5 +172,28 @@ describe("parseEnv", () => {
       now: new Date("2026-07-23T01:01:00.000Z"),
     })).not.toThrow();
     expect(() => parseEnv({ ...input, ONBOARDING_MAIL_CONFIRMATION_SECRET: "too-short" })).toThrow();
+  });
+
+  it("derives the mail confirmation secret from the independent auth secret", () => {
+    const first = parseEnv({
+      ADMIN_USERNAME: "admin",
+      ADMIN_PASSWORD: "first-admin-password-123",
+      AUTH_TOKEN_SECRET: authTokenSecret,
+    });
+    const passwordChanged = parseEnv({
+      ADMIN_USERNAME: "admin",
+      ADMIN_PASSWORD: "second-admin-password-456",
+      AUTH_TOKEN_SECRET: authTokenSecret,
+    });
+    const secretChanged = parseEnv({
+      ADMIN_USERNAME: "admin",
+      ADMIN_PASSWORD: "first-admin-password-123",
+      AUTH_TOKEN_SECRET: `${authTokenSecret}-rotated`,
+    });
+
+    expect(passwordChanged.ONBOARDING_MAIL_CONFIRMATION_SECRET)
+      .toBe(first.ONBOARDING_MAIL_CONFIRMATION_SECRET);
+    expect(secretChanged.ONBOARDING_MAIL_CONFIRMATION_SECRET)
+      .not.toBe(first.ONBOARDING_MAIL_CONFIRMATION_SECRET);
   });
 });

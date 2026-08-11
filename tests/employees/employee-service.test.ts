@@ -19,16 +19,23 @@ import {
 } from "@/features/employees/employee-service";
 import { hashPassword, verifyPassword } from "@/features/auth/password";
 import {
-  consumePasswordReset,
-  hashPasswordResetToken,
+  consumePasswordReset as consumePasswordResetWithSecret,
   PasswordResetError,
 } from "@/features/auth/password-reset-service";
 import { createSession, getActiveSession } from "@/features/auth/session";
+import {
+  hashTestPasswordResetToken as hashPasswordResetToken,
+  TEST_AUTH_TOKEN_SECRET,
+} from "../helpers/auth-token";
 import { createTestDatabase } from "../helpers/test-db";
 
 describe("employee service", () => {
   let testDb: Awaited<ReturnType<typeof createTestDatabase>>;
   let actorId: string;
+  const consumePasswordReset = (
+    dependencies: Omit<Parameters<typeof consumePasswordResetWithSecret>[0], "tokenHashSecret">,
+    input: Parameters<typeof consumePasswordResetWithSecret>[1],
+  ) => consumePasswordResetWithSecret({ ...dependencies, tokenHashSecret: TEST_AUTH_TOKEN_SECRET }, input);
 
   beforeEach(async () => {
     randomIntMock.mockReset();

@@ -1,15 +1,15 @@
-import { createHash } from "node:crypto";
+import { createHmac } from "node:crypto";
 
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { Role, UserSource, UserStatus } from "@/generated/prisma/enums";
 import { hashPassword, verifyPassword } from "@/features/auth/password";
 import {
-  consumePasswordReset,
-  hashPasswordResetToken,
+  consumePasswordReset as consumePasswordResetWithSecret,
+  hashPasswordResetToken as hashPasswordResetTokenWithSecret,
   PasswordResetError,
   PASSWORD_RESET_PUBLIC_MESSAGE,
-  requestPasswordReset,
+  requestPasswordReset as requestPasswordResetWithSecret,
 } from "@/features/auth/password-reset-service";
 import {
   createPasswordResetSender,
@@ -29,6 +29,17 @@ import { createTestDatabase } from "../helpers/test-db";
 describe("password reset service", () => {
   let testDb: Awaited<ReturnType<typeof createTestDatabase>>;
   const now = new Date("2026-07-21T10:00:00.000Z");
+  const tokenHashSecret = "test-only-password-reset-hmac-secret-2026";
+  const hashPasswordResetToken = (token: string, secret = tokenHashSecret) =>
+    hashPasswordResetTokenWithSecret(token, secret);
+  const requestPasswordReset = (
+    dependencies: Omit<Parameters<typeof requestPasswordResetWithSecret>[0], "tokenHashSecret">,
+    input: Parameters<typeof requestPasswordResetWithSecret>[1],
+  ) => requestPasswordResetWithSecret({ ...dependencies, tokenHashSecret }, input);
+  const consumePasswordReset = (
+    dependencies: Omit<Parameters<typeof consumePasswordResetWithSecret>[0], "tokenHashSecret">,
+    input: Parameters<typeof consumePasswordResetWithSecret>[1],
+  ) => consumePasswordResetWithSecret({ ...dependencies, tokenHashSecret }, input);
 
   beforeEach(async () => {
     testDb = await createTestDatabase();
@@ -281,7 +292,7 @@ describe("password reset service", () => {
     expect((await testDb.db.user.findUniqueOrThrow({ where: { id: user.id } })).email).toBe("recovery-new@example.invalid");
   });
 
-  it("stores only SHA-256 token hashes and one-way request fingerprints", async () => {
+  it("stores only keyed token hashes and one-way request fingerprints", async () => {
     await createEmployee();
     const rawBytes = Buffer.alloc(32, 0xab);
     const result = await requestPasswordReset(
@@ -292,7 +303,16 @@ describe("password reset service", () => {
     const stored = await testDb.db.passwordResetToken.findFirstOrThrow();
     const simulated = await testDb.db.simulatedEmailLog.findFirstOrThrow();
 
-    expect(stored.tokenHash).toBe(createHash("sha256").update(rawToken).digest("hex"));
+    expect(stored.tokenHash).toBe(
+      createHmac("sha256", tokenHashSecret)
+        .update("cohort-harbor:password-reset-token:v1\0")
+        .update(rawToken)
+        .digest("hex"),
+    );
+    expect(hashPasswordResetToken(rawToken, `${tokenHashSecret}-other`)).not.toBe(stored.tokenHash);
+    expect(() => hashPasswordResetToken(rawToken, "too-short")).toThrow(
+      "Password reset token secret must contain at least 32 characters",
+    );
     expect(stored.tokenHash).not.toContain(rawToken);
     expect(stored.expiresAt).toEqual(new Date(now.getTime() + 30 * 60 * 1_000));
     expect(stored.deliveredAt).toEqual(now);

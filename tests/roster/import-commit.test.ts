@@ -16,18 +16,29 @@ import {
 import type { NormalizedRosterRow } from "@/features/roster/types";
 import { hashPassword, verifyPassword } from "@/features/auth/password";
 import {
-  consumePasswordReset,
-  hashPasswordResetToken,
+  consumePasswordReset as consumePasswordResetWithSecret,
   PasswordResetError,
-  requestPasswordReset,
+  requestPasswordReset as requestPasswordResetWithSecret,
 } from "@/features/auth/password-reset-service";
 import { createPasswordResetSender } from "@/features/auth/password-reset-sender";
 import { createSession, getActiveSession } from "@/features/auth/session";
 import { updateEmployee } from "@/features/employees/employee-service";
+import {
+  hashTestPasswordResetToken as hashPasswordResetToken,
+  TEST_AUTH_TOKEN_SECRET,
+} from "../helpers/auth-token";
 import { createTestDatabase } from "../helpers/test-db";
 
 describe("roster import commit", () => {
   let testDb: Awaited<ReturnType<typeof createTestDatabase>>;
+  const consumePasswordReset = (
+    dependencies: Omit<Parameters<typeof consumePasswordResetWithSecret>[0], "tokenHashSecret">,
+    input: Parameters<typeof consumePasswordResetWithSecret>[1],
+  ) => consumePasswordResetWithSecret({ ...dependencies, tokenHashSecret: TEST_AUTH_TOKEN_SECRET }, input);
+  const requestPasswordReset = (
+    dependencies: Omit<Parameters<typeof requestPasswordResetWithSecret>[0], "tokenHashSecret">,
+    input: Parameters<typeof requestPasswordResetWithSecret>[1],
+  ) => requestPasswordResetWithSecret({ ...dependencies, tokenHashSecret: TEST_AUTH_TOKEN_SECRET }, input);
   let actorId: string;
 
   beforeEach(async () => {

@@ -10,6 +10,7 @@ import {
 } from "@/features/auth/password-reset-service";
 import { authErrorResponse } from "@/features/auth/route-utils";
 import { prisma } from "@/lib/db/client";
+import { getEnv } from "@/lib/env";
 
 const inputSchema = z.object({
   token: z.string().min(1),
@@ -18,6 +19,7 @@ const inputSchema = z.object({
 
 export function createResetPasswordRoute(dependencies: {
   db: PrismaClient;
+  tokenHashSecret: string;
   now?: () => Date;
 }) {
   return async function handleResetPassword(request: Request) {
@@ -48,5 +50,8 @@ export function createResetPasswordRoute(dependencies: {
 }
 
 export async function POST(request: Request) {
-  return createResetPasswordRoute({ db: prisma })(request);
+  return createResetPasswordRoute({
+    db: prisma,
+    tokenHashSecret: getEnv().AUTH_TOKEN_SECRET,
+  })(request);
 }

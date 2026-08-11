@@ -42,11 +42,15 @@ if ($pnpmCommand) {
 $envPath = Join-Path $projectRoot ".env"
 if (-not (Test-Path -LiteralPath $envPath)) {
   Copy-Item -LiteralPath (Join-Path $projectRoot ".env.example") -Destination $envPath
-  throw ".env was created. Set ADMIN_PASSWORD to at least 10 characters, then run this script again."
+  throw ".env was created. Set ADMIN_PASSWORD to at least 10 characters and AUTH_TOKEN_SECRET to at least 32 random characters, then run this script again."
 }
 $envContent = Get-Content -LiteralPath $envPath -Raw
 if ($envContent -notmatch '(?m)^ADMIN_PASSWORD=.+$') {
   throw "ADMIN_PASSWORD in .env must not be empty. Never commit the real password to Git."
+}
+
+if ($envContent -notmatch '(?m)^AUTH_TOKEN_SECRET=.{32,}$') {
+  throw "AUTH_TOKEN_SECRET in .env must contain at least 32 random characters. Never commit it to Git."
 }
 
 if (-not (Test-Path -LiteralPath (Join-Path $projectRoot "node_modules"))) {

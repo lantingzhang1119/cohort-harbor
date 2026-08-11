@@ -10,6 +10,7 @@ export function createE2eEnvironment(
     DATABASE_URL: `file:${path.resolve(projectRoot, "storage/private/e2e.db")}`,
     ADMIN_USERNAME: "e2e-admin",
     ADMIN_PASSWORD: "AdminE2EPass!23",
+    AUTH_TOKEN_SECRET: "e2e-only-auth-token-hmac-secret-2026",
     ADMIN_DISPLAY_NAME: "端到端管理员",
     NEXT_DIST_DIR: nextDistDir,
     PRIVATE_STORAGE_ROOT: "storage/private/e2e-assets",

@@ -50,7 +50,8 @@ corepack enable
 corepack prepare pnpm@11.16.0 --activate
 pnpm install --frozen-lockfile
 cp .env.example .env
-# 编辑 .env，至少填写 ADMIN_USERNAME 和满足策略的 ADMIN_PASSWORD
+# 编辑 .env，至少填写 ADMIN_USERNAME、满足策略的 ADMIN_PASSWORD，
+# 以及由密码管理器生成的 32 字符以上 AUTH_TOKEN_SECRET
 pnpm db:ensure
 pnpm db:generate
 pnpm db:migrate

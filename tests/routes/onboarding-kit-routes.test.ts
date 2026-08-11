@@ -149,6 +149,7 @@ describe("onboarding-kit admin and employee routes", () => {
     const runtime = onboardingZipRuntimeOptions(parseEnv({
       ADMIN_USERNAME: "admin",
       ADMIN_PASSWORD: "change-me-12345",
+      AUTH_TOKEN_SECRET: "test-only-auth-token-hmac-secret-2026",
       PRIVATE_STORAGE_ROOT: privateRoot,
       ONBOARDING_ZIP_TEMP_ROOT: path.join(privateRoot, "zip-env"),
       ONBOARDING_ZIP_MAX_FILES: "3",
@@ -167,6 +168,7 @@ describe("onboarding-kit admin and employee routes", () => {
     const runtime = onboardingZipRuntimeOptions(parseEnv({
       ADMIN_USERNAME: "admin",
       ADMIN_PASSWORD: "change-me-12345",
+      AUTH_TOKEN_SECRET: "test-only-auth-token-hmac-secret-2026",
       ONBOARDING_ZIP_TEMP_ROOT: path.join(privateRoot, "zip-env-cap"),
       ONBOARDING_ZIP_MAX_FILES: "3",
     }));

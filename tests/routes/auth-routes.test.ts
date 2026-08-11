@@ -3,23 +3,30 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import type { Prisma, PrismaClient } from "@/generated/prisma/client";
 import { Role, SessionViewMode, UserSource, UserStatus } from "@/generated/prisma/enums";
 import { createChangePasswordRoute } from "@/app/api/auth/change-password/route";
-import { createForgotPasswordRoute } from "@/app/api/auth/forgot-password/route";
+import { createForgotPasswordRoute as createForgotPasswordRouteWithSecret } from "@/app/api/auth/forgot-password/route";
 import { createLoginRoute } from "@/app/api/auth/login/route";
 import { createLogoutRoute } from "@/app/api/auth/logout/route";
-import { createResetPasswordRoute } from "@/app/api/auth/reset-password/route";
+import { createResetPasswordRoute as createResetPasswordRouteWithSecret } from "@/app/api/auth/reset-password/route";
 import { createViewModeRoute } from "@/app/api/auth/view-mode/route";
 import { hashPassword, verifyPassword } from "@/features/auth/password";
-import {
-  hashPasswordResetToken,
-  PASSWORD_RESET_PUBLIC_MESSAGE,
-} from "@/features/auth/password-reset-service";
+import { PASSWORD_RESET_PUBLIC_MESSAGE } from "@/features/auth/password-reset-service";
 import { createPasswordResetSender } from "@/features/auth/password-reset-sender";
 import { createSession, getActiveSession, hashSessionToken } from "@/features/auth/session";
+import {
+  hashTestPasswordResetToken as hashPasswordResetToken,
+  TEST_AUTH_TOKEN_SECRET,
+} from "../helpers/auth-token";
 import { createTestDatabase } from "../helpers/test-db";
 
 describe("authentication routes", () => {
   let testDb: Awaited<ReturnType<typeof createTestDatabase>>;
   const now = new Date("2026-07-16T09:00:00.000Z");
+  const createForgotPasswordRoute = (
+    dependencies: Omit<Parameters<typeof createForgotPasswordRouteWithSecret>[0], "tokenHashSecret">,
+  ) => createForgotPasswordRouteWithSecret({ ...dependencies, tokenHashSecret: TEST_AUTH_TOKEN_SECRET });
+  const createResetPasswordRoute = (
+    dependencies: Omit<Parameters<typeof createResetPasswordRouteWithSecret>[0], "tokenHashSecret">,
+  ) => createResetPasswordRouteWithSecret({ ...dependencies, tokenHashSecret: TEST_AUTH_TOKEN_SECRET });
 
   beforeEach(async () => {
     testDb = await createTestDatabase();
@@ -525,7 +532,7 @@ describe("authentication routes", () => {
     await testDb.db.passwordResetToken.create({
       data: {
         userId: employee.id,
-        tokenHash: hashSessionToken("route-reset-token"),
+        tokenHash: hashPasswordResetToken("route-reset-token"),
         requestFingerprint: "f".repeat(64),
         expiresAt: new Date(now.getTime() + 1_000),
         deliveredAt: now,

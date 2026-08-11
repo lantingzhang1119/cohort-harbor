@@ -1,4 +1,4 @@
-import { createHash, randomBytes as nodeRandomBytes } from "node:crypto";
+import { createHmac, randomBytes as nodeRandomBytes } from "node:crypto";
 
 import type { PrismaClient } from "@/generated/prisma/client";
 import { UserStatus } from "@/generated/prisma/enums";
@@ -38,12 +38,23 @@ export class PasswordResetError extends Error {
   }
 }
 
-export function hashPasswordResetToken(token: string) {
-  return createHash("sha256").update(token, "utf8").digest("hex");
+function passwordResetHmac(secret: string) {
+  if (secret.length < 32) {
+    throw new Error("Password reset token secret must contain at least 32 characters");
+  }
+  return createHmac("sha256", secret);
 }
 
-function requestFingerprint(userId: string, source: string) {
-  return createHash("sha256")
+export function hashPasswordResetToken(token: string, secret: string) {
+  return passwordResetHmac(secret)
+    .update("cohort-harbor:password-reset-token:v1\0")
+    .update(token, "utf8")
+    .digest("hex");
+}
+
+function requestFingerprint(userId: string, source: string, secret: string) {
+  return passwordResetHmac(secret)
+    .update("cohort-harbor:password-reset-request:v1\0")
     .update(userId, "utf8")
     .update("\0")
     .update(source, "utf8")
@@ -69,6 +80,7 @@ export async function requestPasswordReset(
     now?: () => Date;
     randomBytes?: (size: number) => Buffer;
     markDelivered?: (recordId: string, deliveredAt: Date) => Promise<void>;
+    tokenHashSecret: string;
   },
   input: { identifier: string; requestSource: string },
 ) {
@@ -114,9 +126,9 @@ export async function requestPasswordReset(
     return baseResult();
   }
 
-  const fingerprint = requestFingerprint(user.id, input.requestSource);
+  const fingerprint = requestFingerprint(user.id, input.requestSource, dependencies.tokenHashSecret);
   const token = makeToken();
-  const tokenHash = hashPasswordResetToken(token);
+  const tokenHash = hashPasswordResetToken(token, dependencies.tokenHashSecret);
   let record: { id: string } | null;
   try {
     record = await dependencies.db.$transaction(async (transaction) => {
@@ -212,12 +224,12 @@ export async function requestPasswordReset(
 }
 
 export async function consumePasswordReset(
-  dependencies: { db: PrismaClient; now?: () => Date },
+  dependencies: { db: PrismaClient; tokenHashSecret: string; now?: () => Date },
   input: { token: string; newPassword: string },
 ) {
   const parsedPassword = newPasswordSchema.parse(input.newPassword);
   const now = dependencies.now?.() ?? new Date();
-  const tokenHash = hashPasswordResetToken(input.token);
+  const tokenHash = hashPasswordResetToken(input.token, dependencies.tokenHashSecret);
 
   return dependencies.db.$transaction(async (transaction) => {
     const resetToken = await transaction.passwordResetToken.findUnique({

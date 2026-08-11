@@ -7,9 +7,9 @@ import { createResetPasswordRoute } from "@/app/api/admin/employees/[id]/reset-p
 import { createEmployeeDetailRoute } from "@/app/api/admin/employees/[id]/route";
 import { hashPassword } from "@/features/auth/password";
 import { verifyPassword } from "@/features/auth/password";
-import { hashPasswordResetToken } from "@/features/auth/password-reset-service";
 import { createSession, hashSessionToken } from "@/features/auth/session";
 import { resetEmployeePassword } from "@/features/employees/employee-service";
+import { hashTestPasswordResetToken as hashPasswordResetToken } from "../helpers/auth-token";
 import { createTestDatabase } from "../helpers/test-db";
 
 describe("employee administration routes", () => {

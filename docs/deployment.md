@@ -23,6 +23,7 @@ Edit `.env` and provide at least:
 - `DATABASE_URL`: a local SQLite URL such as `file:./storage/private/demo.db`, or the connection value supported by the deployment.
 - `ADMIN_USERNAME`: the first administrator identifier.
 - `ADMIN_PASSWORD`: a private password with at least 10 characters, including letters and digits.
+- `AUTH_TOKEN_SECRET`: an independent random secret of at least 32 characters, used for keyed password-reset token digests. Generate and store it in the deployment secret manager; do not derive it from `ADMIN_PASSWORD`.
 - `ADMIN_DISPLAY_NAME`: the display name for the initial super administrator.
 - `PRIVATE_STORAGE_ROOT`: a directory that is not served as a public static asset.
 

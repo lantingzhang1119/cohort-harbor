@@ -15,6 +15,7 @@ import {
 } from "@/features/auth/password-reset-sender";
 import { authErrorResponse } from "@/features/auth/route-utils";
 import { prisma } from "@/lib/db/client";
+import { getEnv } from "@/lib/env";
 
 const inputSchema = z.object({ identifier: z.string().trim() });
 
@@ -24,6 +25,7 @@ type Dependencies = {
   now?: () => Date;
   randomBytes?: (size: number) => Buffer;
   defer?: (work: () => Promise<void>) => void;
+  tokenHashSecret: string;
 };
 
 const DIRECT_REQUEST_SOURCE = "direct";
@@ -64,9 +66,15 @@ export function createForgotPasswordRoute(dependencies: Dependencies) {
 }
 
 export async function POST(request: Request) {
+  const env = getEnv();
   const sender = createPasswordResetSender({
     db: prisma,
     env: process.env,
   });
-  return createForgotPasswordRoute({ db: prisma, sender, randomBytes })(request);
+  return createForgotPasswordRoute({
+    db: prisma,
+    sender,
+    randomBytes,
+    tokenHashSecret: env.AUTH_TOKEN_SECRET,
+  })(request);
 }
