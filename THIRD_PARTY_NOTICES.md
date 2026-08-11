@@ -2,7 +2,7 @@
 
 CohortHarbor is distributed under the MIT License. Its dependency graph and vendored assets include third-party works under their own licenses. This inventory is generated from `pnpm licenses list --json`; package paths are intentionally omitted so local developer paths never enter the repository.
 
-Dependency groups: 19. Package records: 698.
+Dependency groups: 20. Package records: 757.
 
 ## Vendored assets
 
@@ -55,6 +55,16 @@ Dependency groups: 19. Package records: 698.
 - **@humanwhocodes/retry@0.4.3**
   - Attribution: Nicholas C. Zaks — https://github.com/humanwhocodes/retry#readme
 - **@img/sharp-darwin-arm64@0.35.3**
+  - Attribution: Lovell Fuller — https://sharp.pixelplumbing.com
+- **@img/sharp-darwin-x64@0.35.3**
+  - Attribution: Lovell Fuller — https://sharp.pixelplumbing.com
+- **@img/sharp-linux-arm64@0.35.3**
+  - Attribution: Lovell Fuller — https://sharp.pixelplumbing.com
+- **@img/sharp-linux-x64@0.35.3**
+  - Attribution: Lovell Fuller — https://sharp.pixelplumbing.com
+- **@img/sharp-linuxmusl-arm64@0.35.3**
+  - Attribution: Lovell Fuller — https://sharp.pixelplumbing.com
+- **@img/sharp-linuxmusl-x64@0.35.3**
   - Attribution: Lovell Fuller — https://sharp.pixelplumbing.com
 - **@playwright/test@1.61.1**
   - Attribution: Microsoft Corporation — https://playwright.dev
@@ -150,6 +160,13 @@ Dependency groups: 19. Package records: 698.
   - Attribution: sheetjs — https://sheetjs.com/
 - **xml-name-validator@5.0.0**
   - Attribution: Domenic Denicola — https://github.com/jsdom/xml-name-validator#readme
+
+## Apache-2.0 AND LGPL-3.0-or-later
+
+- **@img/sharp-win32-arm64@0.35.3**
+  - Attribution: Lovell Fuller — https://sharp.pixelplumbing.com
+- **@img/sharp-win32-x64@0.35.3**
+  - Attribution: Lovell Fuller — https://sharp.pixelplumbing.com
 
 ## BlueOak-1.0.0
 
@@ -300,6 +317,16 @@ Dependency groups: 19. Package records: 698.
 
 - **@img/sharp-libvips-darwin-arm64@1.3.2**
   - Attribution: Lovell Fuller — https://sharp.pixelplumbing.com
+- **@img/sharp-libvips-darwin-x64@1.3.2**
+  - Attribution: Lovell Fuller — https://sharp.pixelplumbing.com
+- **@img/sharp-libvips-linux-arm64@1.3.2**
+  - Attribution: Lovell Fuller — https://sharp.pixelplumbing.com
+- **@img/sharp-libvips-linux-x64@1.3.2**
+  - Attribution: Lovell Fuller — https://sharp.pixelplumbing.com
+- **@img/sharp-libvips-linuxmusl-arm64@1.3.2**
+  - Attribution: Lovell Fuller — https://sharp.pixelplumbing.com
+- **@img/sharp-libvips-linuxmusl-x64@1.3.2**
+  - Attribution: Lovell Fuller — https://sharp.pixelplumbing.com
 
 ## MIT
 
@@ -359,6 +386,16 @@ Dependency groups: 19. Package records: 698.
   - Attribution: https://github.com/csstools/postcss-plugins/tree/main/packages/css-tokenizer#readme
 - **@esbuild/darwin-arm64@0.28.1**
   - Attribution: https://github.com/evanw/esbuild#readme
+- **@esbuild/darwin-x64@0.28.1**
+  - Attribution: https://github.com/evanw/esbuild#readme
+- **@esbuild/linux-arm64@0.28.1**
+  - Attribution: https://github.com/evanw/esbuild#readme
+- **@esbuild/linux-x64@0.28.1**
+  - Attribution: https://github.com/evanw/esbuild#readme
+- **@esbuild/win32-arm64@0.28.1**
+  - Attribution: https://github.com/evanw/esbuild#readme
+- **@esbuild/win32-x64@0.28.1**
+  - Attribution: https://github.com/evanw/esbuild#readme
 - **@eslint-community/eslint-utils@4.9.1**
   - Attribution: Toru Nagashima — https://github.com/eslint-community/eslint-utils#readme
 - **@eslint-community/regexpp@4.12.2**
@@ -391,11 +428,39 @@ Dependency groups: 19. Package records: 698.
   - Attribution: https://github.com/Brooooooklyn/canvas#readme
 - **@napi-rs/canvas-darwin-arm64@1.0.2**
   - Attribution: https://github.com/Brooooooklyn/canvas#readme
+- **@napi-rs/canvas-darwin-x64@1.0.2**
+  - Attribution: https://github.com/Brooooooklyn/canvas#readme
+- **@napi-rs/canvas-linux-arm64-gnu@1.0.2**
+  - Attribution: https://github.com/Brooooooklyn/canvas#readme
+- **@napi-rs/canvas-linux-arm64-musl@1.0.2**
+  - Attribution: https://github.com/Brooooooklyn/canvas#readme
+- **@napi-rs/canvas-linux-x64-gnu@1.0.2**
+  - Attribution: https://github.com/Brooooooklyn/canvas#readme
+- **@napi-rs/canvas-linux-x64-musl@1.0.2**
+  - Attribution: https://github.com/Brooooooklyn/canvas#readme
+- **@napi-rs/canvas-win32-arm64-msvc@1.0.2**
+  - Attribution: https://github.com/Brooooooklyn/canvas#readme
+- **@napi-rs/canvas-win32-x64-msvc@1.0.2**
+  - Attribution: https://github.com/Brooooooklyn/canvas#readme
 - **@next/env@16.2.11**
   - Attribution: Next.js Team — https://github.com/vercel/next.js#readme
 - **@next/eslint-plugin-next@16.2.11**
   - Attribution: https://github.com/vercel/next.js#readme
 - **@next/swc-darwin-arm64@16.2.11**
+  - Attribution: https://github.com/vercel/next.js#readme
+- **@next/swc-darwin-x64@16.2.11**
+  - Attribution: https://github.com/vercel/next.js#readme
+- **@next/swc-linux-arm64-gnu@16.2.11**
+  - Attribution: https://github.com/vercel/next.js#readme
+- **@next/swc-linux-arm64-musl@16.2.11**
+  - Attribution: https://github.com/vercel/next.js#readme
+- **@next/swc-linux-x64-gnu@16.2.11**
+  - Attribution: https://github.com/vercel/next.js#readme
+- **@next/swc-linux-x64-musl@16.2.11**
+  - Attribution: https://github.com/vercel/next.js#readme
+- **@next/swc-win32-arm64-msvc@16.2.11**
+  - Attribution: https://github.com/vercel/next.js#readme
+- **@next/swc-win32-x64-msvc@16.2.11**
   - Attribution: https://github.com/vercel/next.js#readme
 - **@nodelib/fs.scandir@2.1.5**
   - Attribution: https://github.com/nodelib/nodelib/tree/master#readme
@@ -425,6 +490,20 @@ Dependency groups: 19. Package records: 698.
   - Attribution: https://radix-ui.com/primitives
 - **@rolldown/binding-darwin-arm64@1.1.5**
   - Attribution: https://rolldown.rs/
+- **@rolldown/binding-darwin-x64@1.1.5**
+  - Attribution: https://rolldown.rs/
+- **@rolldown/binding-linux-arm64-gnu@1.1.5**
+  - Attribution: https://rolldown.rs/
+- **@rolldown/binding-linux-arm64-musl@1.1.5**
+  - Attribution: https://rolldown.rs/
+- **@rolldown/binding-linux-x64-gnu@1.1.5**
+  - Attribution: https://rolldown.rs/
+- **@rolldown/binding-linux-x64-musl@1.1.5**
+  - Attribution: https://rolldown.rs/
+- **@rolldown/binding-win32-arm64-msvc@1.1.5**
+  - Attribution: https://rolldown.rs/
+- **@rolldown/binding-win32-x64-msvc@1.1.5**
+  - Attribution: https://rolldown.rs/
 - **@rolldown/pluginutils@1.0.1**
   - Attribution: https://github.com/rolldown/plugins/tree/main/packages/pluginutils#readme
 - **@rtsao/scc@1.1.0**
@@ -436,6 +515,20 @@ Dependency groups: 19. Package records: 698.
 - **@tailwindcss/oxide@4.3.2**
   - Attribution: https://github.com/tailwindlabs/tailwindcss#readme
 - **@tailwindcss/oxide-darwin-arm64@4.3.2**
+  - Attribution: https://github.com/tailwindlabs/tailwindcss#readme
+- **@tailwindcss/oxide-darwin-x64@4.3.2**
+  - Attribution: https://github.com/tailwindlabs/tailwindcss#readme
+- **@tailwindcss/oxide-linux-arm64-gnu@4.3.2**
+  - Attribution: https://github.com/tailwindlabs/tailwindcss#readme
+- **@tailwindcss/oxide-linux-arm64-musl@4.3.2**
+  - Attribution: https://github.com/tailwindlabs/tailwindcss#readme
+- **@tailwindcss/oxide-linux-x64-gnu@4.3.2**
+  - Attribution: https://github.com/tailwindlabs/tailwindcss#readme
+- **@tailwindcss/oxide-linux-x64-musl@4.3.2**
+  - Attribution: https://github.com/tailwindlabs/tailwindcss#readme
+- **@tailwindcss/oxide-win32-arm64-msvc@4.3.2**
+  - Attribution: https://github.com/tailwindlabs/tailwindcss#readme
+- **@tailwindcss/oxide-win32-x64-msvc@4.3.2**
   - Attribution: https://github.com/tailwindlabs/tailwindcss#readme
 - **@tailwindcss/postcss@4.3.2**
   - Attribution: https://tailwindcss.com
@@ -584,6 +677,20 @@ Dependency groups: 19. Package records: 698.
 - **@typescript-eslint/visitor-keys@8.64.0**
   - Attribution: https://typescript-eslint.io
 - **@unrs/resolver-binding-darwin-arm64@1.12.2**
+  - Attribution: https://github.com/unrs/unrs-resolver
+- **@unrs/resolver-binding-darwin-x64@1.12.2**
+  - Attribution: https://github.com/unrs/unrs-resolver
+- **@unrs/resolver-binding-linux-arm64-gnu@1.12.2**
+  - Attribution: https://github.com/unrs/unrs-resolver
+- **@unrs/resolver-binding-linux-arm64-musl@1.12.2**
+  - Attribution: https://github.com/unrs/unrs-resolver
+- **@unrs/resolver-binding-linux-x64-gnu@1.12.2**
+  - Attribution: https://github.com/unrs/unrs-resolver
+- **@unrs/resolver-binding-linux-x64-musl@1.12.2**
+  - Attribution: https://github.com/unrs/unrs-resolver
+- **@unrs/resolver-binding-win32-arm64-msvc@1.12.2**
+  - Attribution: https://github.com/unrs/unrs-resolver
+- **@unrs/resolver-binding-win32-x64-msvc@1.12.2**
   - Attribution: https://github.com/unrs/unrs-resolver
 - **@visx/curve@4.0.1-alpha.0**
   - Attribution: @hshoff — https://github.com/airbnb/visx#readme
@@ -1441,6 +1548,20 @@ Dependency groups: 19. Package records: 698.
 - **lightningcss@1.32.0**
   - Attribution: https://github.com/parcel-bundler/lightningcss#readme
 - **lightningcss-darwin-arm64@1.32.0**
+  - Attribution: https://github.com/parcel-bundler/lightningcss#readme
+- **lightningcss-darwin-x64@1.32.0**
+  - Attribution: https://github.com/parcel-bundler/lightningcss#readme
+- **lightningcss-linux-arm64-gnu@1.32.0**
+  - Attribution: https://github.com/parcel-bundler/lightningcss#readme
+- **lightningcss-linux-arm64-musl@1.32.0**
+  - Attribution: https://github.com/parcel-bundler/lightningcss#readme
+- **lightningcss-linux-x64-gnu@1.32.0**
+  - Attribution: https://github.com/parcel-bundler/lightningcss#readme
+- **lightningcss-linux-x64-musl@1.32.0**
+  - Attribution: https://github.com/parcel-bundler/lightningcss#readme
+- **lightningcss-win32-arm64-msvc@1.32.0**
+  - Attribution: https://github.com/parcel-bundler/lightningcss#readme
+- **lightningcss-win32-x64-msvc@1.32.0**
   - Attribution: https://github.com/parcel-bundler/lightningcss#readme
 
 ## OFL-1.1

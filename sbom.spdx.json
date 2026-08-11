@@ -3,9 +3,9 @@
   "dataLicense": "CC0-1.0",
   "SPDXID": "SPDXRef-DOCUMENT",
   "name": "cohort-harbor",
-  "documentNamespace": "https://spdx.org/spdxdocs/cohort-harbor-0.1.0-dc2f13ef-a716-41c3-8a6f-613fbd46b184",
+  "documentNamespace": "https://spdx.org/spdxdocs/cohort-harbor-0.1.0-9f610833-1924-41b1-aa6f-1dfb52dcb6f3",
   "creationInfo": {
-    "created": "2026-08-11T14:47:04.926Z",
+    "created": "2026-08-11T15:22:32.089Z",
     "creators": [
       "Tool: pnpm"
     ]
