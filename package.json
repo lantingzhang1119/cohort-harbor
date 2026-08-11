@@ -58,7 +58,7 @@
     "dotenv": "17.4.2",
     "konva": "10.3.0",
     "lucide-react": "1.24.0",
-    "next": "16.2.11",
+    "next": "16.3.0",
     "nodemailer": "9.0.3",
     "pdfjs-dist": "6.2.108",
     "react": "19.2.7",
