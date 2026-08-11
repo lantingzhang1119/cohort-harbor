@@ -87,7 +87,7 @@
     "@types/yauzl": "3.4.0",
     "eslint": "9.39.5",
     "eslint-config-next": "16.2.11",
-    "jsdom": "29.1.1",
+    "jsdom": "30.0.1",
     "postcss": "8.5.26",
     "prisma": "7.9.1",
     "sharp": "0.35.3",
