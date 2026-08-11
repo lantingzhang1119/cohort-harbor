@@ -1,0 +1,17 @@
+CohortHarbor
+Copyright (c) 2026 CohortHarbor contributors
+
+CohortHarbor is licensed under the MIT License. See LICENSE and
+LICENSES/MIT.txt.
+
+This distribution includes third-party works that retain their own licenses:
+
+- Noto Sans CJK SC Regular from the Noto CJK project, licensed under the SIL
+  Open Font License 1.1. See vendor/fonts/README.md and LICENSES/OFL-1.1.txt.
+- Simplified Chinese and English Tesseract fast trained-data files from the
+  tessdata_fast project, licensed under Apache License 2.0. See
+  vendor/tessdata/README.md and LICENSES/Apache-2.0.txt.
+
+Dependency-level attribution is recorded in THIRD_PARTY_NOTICES.md and the
+machine-readable sbom.spdx.json. Third-party names and trademarks are used
+only to identify their respective works and do not imply endorsement.

@@ -1,0 +1,1465 @@
+# Third-Party Notices
+
+CohortHarbor is distributed under the MIT License. Its dependency graph and vendored assets include third-party works under their own licenses. This inventory is generated from `pnpm licenses list --json`; package paths are intentionally omitted so local developer paths never enter the repository.
+
+Dependency groups: 19. Package records: 698.
+
+## Vendored assets
+
+- **Noto Sans CJK SC Regular** — SIL Open Font License 1.1 — <https://github.com/notofonts/noto-cjk> — license text: `LICENSES/OFL-1.1.txt`.
+- **Tesseract `chi_sim` and `eng` fast trained data** — Apache License 2.0 — <https://github.com/tesseract-ocr/tessdata_fast> — license text: `LICENSES/Apache-2.0.txt`.
+
+## Dependency inventory
+
+## (BSD-2-Clause OR MIT OR Apache-2.0)
+
+- **rc@1.2.8**
+  - Attribution: Dominic Tarr — https://github.com/dominictarr/rc#readme
+
+## (MIT OR WTFPL)
+
+- **expand-template@2.0.3**
+  - Attribution: LM — https://github.com/ralphtheninja/expand-template
+
+## 0BSD
+
+- **tslib@2.8.1**
+  - Attribution: Microsoft Corp. — https://www.typescriptlang.org/
+
+## Apache-2.0
+
+- **@electric-sql/pglite@0.4.3**
+  - Attribution: Electric DB Limited — https://pglite.dev
+- **@electric-sql/pglite-socket@0.1.3**
+  - Attribution: Electric DB Limited — https://pglite.dev
+- **@electric-sql/pglite-tools@0.3.3**
+  - Attribution: Electric DB Limited — https://pglite.dev
+- **@eslint/config-array@0.21.2**
+  - Attribution: Nicholas C. Zakas — https://github.com/eslint/rewrite/tree/main/packages/config-array#readme
+- **@eslint/config-helpers@0.4.2**
+  - Attribution: https://github.com/eslint/rewrite/tree/main/packages/config-helpers#readme
+- **@eslint/core@0.17.0**
+  - Attribution: Nicholas C. Zakas — https://github.com/eslint/rewrite/tree/main/packages/core#readme
+- **@eslint/object-schema@2.1.7**
+  - Attribution: Nicholas C. Zakas — https://github.com/eslint/rewrite/tree/main/packages/object-schema#readme
+- **@eslint/plugin-kit@0.4.1**
+  - Attribution: Nicholas C. Zakas — https://github.com/eslint/rewrite/tree/main/packages/plugin-kit#readme
+- **@humanfs/core@0.19.2**
+  - Attribution: Nicholas C. Zakas — https://github.com/humanwhocodes/humanfs#readme
+- **@humanfs/node@0.16.8**
+  - Attribution: Nicholas C. Zakas — https://github.com/humanwhocodes/humanfs#readme
+- **@humanfs/types@0.15.0**
+  - Attribution: Nicholas C. Zakas — https://github.com/humanwhocodes/humanfs#readme
+- **@humanwhocodes/module-importer@1.0.1**
+  - Attribution: Nicholas C. Zaks — https://github.com/humanwhocodes/module-importer#readme
+- **@humanwhocodes/retry@0.4.3**
+  - Attribution: Nicholas C. Zaks — https://github.com/humanwhocodes/retry#readme
+- **@img/sharp-darwin-arm64@0.35.3**
+  - Attribution: Lovell Fuller — https://sharp.pixelplumbing.com
+- **@playwright/test@1.61.1**
+  - Attribution: Microsoft Corporation — https://playwright.dev
+- **@prisma/adapter-better-sqlite3@7.9.1**
+  - Attribution: Alberto Schiabel — https://github.com/prisma/prisma#readme
+- **@prisma/client@7.9.1**
+  - Attribution: Tim Suchanek — https://www.prisma.io
+- **@prisma/client-runtime-utils@7.9.1**
+  - Attribution: https://github.com/prisma/prisma#readme
+- **@prisma/config@7.9.1**
+  - Attribution: Alberto Schiabel — https://github.com/prisma/prisma#readme
+- **@prisma/debug@7.2.0, 7.9.1**
+  - Attribution: Tim Suchanek — https://www.prisma.io
+- **@prisma/driver-adapter-utils@7.9.1**
+  - Attribution: Alberto Schiabel — https://github.com/prisma/prisma#readme
+- **@prisma/engines@7.9.1**
+  - Attribution: Tim Suchanek — https://github.com/prisma/prisma#readme
+- **@prisma/engines-version@7.9.0-1.e922089b7d7502aff4249d5da3420f6fa55fc6ad**
+  - Attribution: Tim Suchanek — https://github.com/prisma/engines-wrapper#readme
+- **@prisma/fetch-engine@7.9.1**
+  - Attribution: Tim Suchanek — https://www.prisma.io
+- **@prisma/get-platform@7.2.0, 7.9.1**
+  - Attribution: Tim Suchanek — https://www.prisma.io
+- **@prisma/query-plan-executor@7.2.0**
+  - Attribution: https://github.com/prisma/prisma#readme
+- **@prisma/streams-local@0.1.11**
+  - Attribution: https://github.com/prisma/streams/tree/main/docs
+- **@prisma/studio-core@0.33.0**
+  - Attribution: https://github.com/prisma/studio#readme
+- **@swc/helpers@0.5.15**
+  - Attribution: 강동윤 — https://swc.rs
+- **aria-query@5.3.0, 5.3.2**
+  - Attribution: Jesse Beach — https://github.com/A11yance/aria-query#readme
+- **axobject-query@4.1.0**
+  - Attribution: Jesse Beach — https://github.com/A11yance/axobject-query#readme
+- **b4a@1.8.1**
+  - Attribution: Holepunch — https://github.com/holepunchto/b4a#readme
+- **bare-events@2.9.1**
+  - Attribution: Holepunch — https://github.com/holepunchto/bare-events#readme
+- **bare-fs@4.7.4**
+  - Attribution: Holepunch — https://github.com/holepunchto/bare-fs#readme
+- **bare-path@3.1.1**
+  - Attribution: Holepunch — https://github.com/holepunchto/bare-path#readme
+- **bare-stream@2.13.3**
+  - Attribution: Holepunch — https://github.com/holepunchto/bare-stream#readme
+- **bare-url@2.4.5**
+  - Attribution: Holepunch — https://github.com/holepunchto/bare-url
+- **baseline-browser-mapping@2.10.43**
+  - Attribution: https://github.com/web-platform-dx/baseline-browser-mapping#readme
+- **crc-32@1.2.2**
+  - Attribution: sheetjs — https://sheetjs.com/
+- **denque@2.1.0**
+  - Attribution: Invertase — https://docs.page/invertase/denque
+- **detect-libc@2.1.2**
+  - Attribution: Lovell Fuller — https://github.com/lovell/detect-libc#readme
+- **doctrine@2.1.0**
+  - Attribution: https://github.com/eslint/doctrine
+- **eslint-visitor-keys@3.4.3, 4.2.1, 5.0.1**
+  - Attribution: Toru Nagashima — https://github.com/eslint/js/blob/main/packages/eslint-visitor-keys/README.md
+- **events-universal@1.0.1**
+  - Attribution: Holepunch — https://github.com/holepunchto/events-universal#readme
+- **expect-type@1.4.0**
+  - Attribution: https://github.com/mmkal/expect-type#readme
+- **idb-keyval@6.3.0**
+  - Attribution: Jake Archibald — https://github.com/jakearchibald/idb-keyval#readme
+- **long@5.3.2**
+  - Attribution: Daniel Wirtz — https://github.com/dcodeIO/long.js#readme
+- **pdfjs-dist@6.2.108**
+  - Attribution: https://mozilla.github.io/pdf.js/
+- **playwright@1.61.1**
+  - Attribution: Microsoft Corporation — https://playwright.dev
+- **playwright-core@1.61.1**
+  - Attribution: Microsoft Corporation — https://playwright.dev
+- **prisma@7.9.1**
+  - Attribution: Tim Suchanek — https://www.prisma.io
+- **readdir-glob@3.0.0**
+  - Attribution: Yann Armelin — https://github.com/Yqnn/node-readdir-glob
+- **sharp@0.35.3**
+  - Attribution: Lovell Fuller — https://sharp.pixelplumbing.com
+- **tesseract.js@7.0.0**
+  - Attribution: https://github.com/naptha/tesseract.js
+- **tesseract.js-core@7.0.0**
+  - Attribution: antimatter15 — https://github.com/naptha/tesseract.js-core
+- **text-decoder@1.2.7**
+  - Attribution: Holepunch — https://github.com/holepunchto/text-decoder#readme
+- **tunnel-agent@0.6.0**
+  - Attribution: Mikeal Rogers — https://github.com/mikeal/tunnel-agent#readme
+- **typescript@6.0.3**
+  - Attribution: Microsoft Corp. — https://www.typescriptlang.org/
+- **wasm-feature-detect@1.8.0**
+  - Attribution: Surma — https://github.com/GoogleChromeLabs/wasm-feature-detect#readme
+- **xlsx@0.20.3**
+  - Attribution: sheetjs — https://sheetjs.com/
+- **xml-name-validator@5.0.0**
+  - Attribution: Domenic Denicola — https://github.com/jsdom/xml-name-validator#readme
+
+## BlueOak-1.0.0
+
+- **lru-cache@11.5.2**
+  - Attribution: Isaac Z. Schlueter — https://github.com/isaacs/node-lru-cache#readme
+- **minimatch@10.2.5**
+  - Attribution: Isaac Z. Schlueter — https://github.com/isaacs/minimatch#readme
+
+## BSD-2-Clause
+
+- **damerau-levenshtein@1.0.8**
+  - Attribution: The Spanish Inquisition — https://github.com/tad-lispy/node-damerau-levenshtein#readme
+- **domelementtype@2.3.0, 3.0.0**
+  - Attribution: Felix Boehm — https://github.com/fb55/domelementtype#readme
+- **domhandler@5.0.3, 6.0.1**
+  - Attribution: Felix Boehm — https://github.com/fb55/domhandler#readme
+- **domutils@3.2.2, 4.0.2**
+  - Attribution: Felix Boehm — https://github.com/fb55/domutils#readme
+- **dotenv@17.4.2**
+  - Attribution: https://github.com/motdotla/dotenv#readme
+- **entities@4.5.0, 7.0.1, 8.0.0**
+  - Attribution: Felix Boehm — https://github.com/fb55/entities#readme
+- **eslint-scope@8.4.0**
+  - Attribution: https://github.com/eslint/js/blob/main/packages/eslint-scope/README.md
+- **espree@10.4.0**
+  - Attribution: Nicholas C. Zakas — https://github.com/eslint/js/blob/main/packages/espree/README.md
+- **esrecurse@4.3.0**
+  - Attribution: https://github.com/estools/esrecurse
+- **estraverse@5.3.0**
+  - Attribution: https://github.com/estools/estraverse
+- **esutils@2.0.3**
+  - Attribution: https://github.com/estools/esutils
+- **uri-js@4.4.1**
+  - Attribution: Gary Court — https://github.com/garycourt/uri-js
+- **webidl-conversions@3.0.1, 8.0.1**
+  - Attribution: Domenic Denicola — https://github.com/jsdom/webidl-conversions#readme
+
+## BSD-3-Clause
+
+- **deepmerge-ts@7.1.5**
+  - Attribution: Rebecca Stevens — https://github.com/RebeccaStevens/deepmerge-ts#readme
+- **esquery@1.7.0**
+  - Attribution: Joel Feenstra — https://github.com/estools/esquery/
+- **fast-uri@3.1.5**
+  - Attribution: Vincent Le Goff — https://github.com/fastify/fast-uri
+- **ieee754@1.2.1**
+  - Attribution: Feross Aboukhadijeh — https://github.com/feross/ieee754#readme
+- **source-map-js@1.2.1**
+  - Attribution: Valentin 7rulnik Semirulnik — https://github.com/7rulnik/source-map-js
+- **tough-cookie@6.0.2**
+  - Attribution: Jeremy Stashewsky — https://github.com/salesforce/tough-cookie
+
+## CC-BY-4.0
+
+- **caniuse-lite@1.0.30001805**
+  - Attribution: Ben Briggs — https://github.com/browserslist/caniuse-lite#readme
+
+## CC0-1.0
+
+- **language-subtag-registry@0.3.23**
+  - Attribution: https://github.com/mattcg/language-subtag-registry
+- **mdn-data@2.27.1**
+  - Attribution: Mozilla Developer Network — https://developer.mozilla.org
+
+## EPL-2.0
+
+- **elkjs@0.11.1**
+  - Attribution: Ulf Rüegg — https://github.com/kieler/elkjs#readme
+
+## ISC
+
+- **@prisma/dev@0.24.17**
+  - Attribution: Igal Klebanov
+- **chownr@1.1.4**
+  - Attribution: Isaac Z. Schlueter — https://github.com/isaacs/chownr#readme
+- **d3-array@3.2.1, 3.2.4**
+  - Attribution: Mike Bostock — https://d3js.org/d3-array/
+- **d3-color@3.1.0**
+  - Attribution: Mike Bostock — https://d3js.org/d3-color/
+- **d3-delaunay@6.0.2**
+  - Attribution: Mike Bostock — https://github.com/d3/d3-delaunay
+- **d3-format@3.1.0**
+  - Attribution: Mike Bostock — https://d3js.org/d3-format/
+- **d3-geo@3.1.0**
+  - Attribution: Mike Bostock — https://d3js.org/d3-geo/
+- **d3-interpolate@3.0.1**
+  - Attribution: Mike Bostock — https://d3js.org/d3-interpolate/
+- **d3-path@3.1.0**
+  - Attribution: Mike Bostock — https://d3js.org/d3-path/
+- **d3-scale@4.0.2**
+  - Attribution: Mike Bostock — https://d3js.org/d3-scale/
+- **d3-shape@3.2.0**
+  - Attribution: Mike Bostock — https://d3js.org/d3-shape/
+- **d3-time@3.1.0**
+  - Attribution: Mike Bostock — https://d3js.org/d3-time/
+- **d3-time-format@4.1.0**
+  - Attribution: Mike Bostock — https://d3js.org/d3-time-format/
+- **delaunator@5.1.0**
+  - Attribution: Vladimir Agafonkin — https://github.com/mapbox/delaunator#readme
+- **electron-to-chromium@1.5.392**
+  - Attribution: Kilian Valkhof — https://github.com/Kilian/electron-to-chromium#readme
+- **eslint-import-resolver-typescript@3.10.1**
+  - Attribution: Alex Gorbatchev — https://github.com/import-js/eslint-import-resolver-typescript#readme
+- **fastq@1.20.1**
+  - Attribution: Matteo Collina — https://github.com/mcollina/fastq#readme
+- **flatted@3.4.2**
+  - Attribution: Andrea Giammarchi — https://github.com/WebReflection/flatted#readme
+- **foreground-child@3.3.1**
+  - Attribution: Isaac Z. Schlueter — https://github.com/tapjs/foreground-child#readme
+- **glob-parent@5.1.2, 6.0.2**
+  - Attribution: Gulp Team — https://github.com/gulpjs/glob-parent#readme
+- **graceful-fs@4.2.11**
+  - Attribution: https://github.com/isaacs/node-graceful-fs#readme
+- **inherits@2.0.4**
+  - Attribution: https://github.com/isaacs/inherits#readme
+- **ini@1.3.8**
+  - Attribution: Isaac Z. Schlueter — https://github.com/isaacs/ini#readme
+- **internmap@2.0.3**
+  - Attribution: Mike Bostock — https://github.com/mbostock/internmap/
+- **isexe@2.0.0**
+  - Attribution: Isaac Z. Schlueter — https://github.com/isaacs/isexe#readme
+- **lru-cache@5.1.1**
+  - Attribution: Isaac Z. Schlueter — https://github.com/isaacs/node-lru-cache#readme
+- **lucide-react@1.24.0**
+  - Attribution: Eric Fennis — https://lucide.dev
+- **minimatch@3.1.5**
+  - Attribution: Isaac Z. Schlueter — https://github.com/isaacs/minimatch#readme
+- **once@1.4.0**
+  - Attribution: Isaac Z. Schlueter — https://github.com/isaacs/once#readme
+- **picocolors@1.1.1**
+  - Attribution: Alexey Raspopov — https://github.com/alexeyraspopov/picocolors#readme
+- **saxes@6.0.0**
+  - Attribution: Louis-Dominique Dubeau — https://github.com/lddubeau/saxes#readme
+- **semver@6.3.1, 7.8.5**
+  - Attribution: GitHub Inc. — https://github.com/npm/node-semver#readme
+- **siginfo@2.0.0**
+  - Attribution: Emil Bay — https://github.com/emilbayes/siginfo#readme
+- **signal-exit@3.0.7, 4.1.0**
+  - Attribution: Ben Coe — https://github.com/tapjs/signal-exit#readme
+- **which@2.0.2**
+  - Attribution: Isaac Z. Schlueter — https://github.com/isaacs/node-which#readme
+- **wrappy@1.0.2**
+  - Attribution: Isaac Z. Schlueter — https://github.com/npm/wrappy
+- **yallist@3.1.1**
+  - Attribution: Isaac Z. Schlueter — https://github.com/isaacs/yallist#readme
+
+## LGPL-3.0-or-later
+
+- **@img/sharp-libvips-darwin-arm64@1.3.2**
+  - Attribution: Lovell Fuller — https://sharp.pixelplumbing.com
+
+## MIT
+
+- **@alloc/quick-lru@5.2.0**
+  - Attribution: Sindre Sorhus — https://github.com/sindresorhus/quick-lru#readme
+- **@asamuzakjp/css-color@5.1.11**
+  - Attribution: asamuzaK — https://github.com/asamuzaK/cssColor#readme
+- **@asamuzakjp/dom-selector@7.1.1**
+  - Attribution: asamuzaK — https://github.com/asamuzaK/domSelector#readme
+- **@asamuzakjp/generational-cache@1.0.1**
+  - Attribution: asamuzaK — https://github.com/asamuzaK/generationalCache
+- **@asamuzakjp/nwsapi@2.3.9**
+  - Attribution: Diego Perini — http://javascript.nwbox.com/nwsapi/
+- **@babel/code-frame@7.29.7**
+  - Attribution: The Babel Team — https://babel.dev/docs/en/next/babel-code-frame
+- **@babel/compat-data@7.29.7**
+  - Attribution: The Babel Team — https://github.com/babel/babel#readme
+- **@babel/core@7.29.7**
+  - Attribution: The Babel Team — https://babel.dev/docs/en/next/babel-core
+- **@babel/generator@7.29.7**
+  - Attribution: The Babel Team — https://babel.dev/docs/en/next/babel-generator
+- **@babel/helper-compilation-targets@7.29.7**
+  - Attribution: The Babel Team — https://github.com/babel/babel#readme
+- **@babel/helper-globals@7.29.7**
+  - Attribution: The Babel Team — https://github.com/babel/babel#readme
+- **@babel/helper-module-imports@7.29.7**
+  - Attribution: The Babel Team — https://babel.dev/docs/en/next/babel-helper-module-imports
+- **@babel/helper-module-transforms@7.29.7**
+  - Attribution: The Babel Team — https://babel.dev/docs/en/next/babel-helper-module-transforms
+- **@babel/helper-string-parser@7.29.7**
+  - Attribution: The Babel Team — https://babel.dev/docs/en/next/babel-helper-string-parser
+- **@babel/helper-validator-identifier@7.29.7**
+  - Attribution: The Babel Team — https://github.com/babel/babel#readme
+- **@babel/helper-validator-option@7.29.7**
+  - Attribution: The Babel Team — https://github.com/babel/babel#readme
+- **@babel/helpers@7.29.7**
+  - Attribution: The Babel Team — https://babel.dev/docs/en/next/babel-helpers
+- **@babel/parser@7.29.7**
+  - Attribution: The Babel Team — https://babel.dev/docs/en/next/babel-parser
+- **@babel/runtime@7.29.7**
+  - Attribution: The Babel Team — https://babel.dev/docs/en/next/babel-runtime
+- **@babel/template@7.29.7**
+  - Attribution: The Babel Team — https://babel.dev/docs/en/next/babel-template
+- **@babel/traverse@7.29.7**
+  - Attribution: The Babel Team — https://babel.dev/docs/en/next/babel-traverse
+- **@babel/types@7.29.7**
+  - Attribution: The Babel Team — https://babel.dev/docs/en/next/babel-types
+- **@bramus/specificity@2.4.2**
+  - Attribution: Bramus Van Damme — https://github.com/bramus/specificity#readme
+- **@csstools/css-calc@3.2.1**
+  - Attribution: https://github.com/csstools/postcss-plugins/tree/main/packages/css-calc#readme
+- **@csstools/css-color-parser@4.1.9**
+  - Attribution: https://github.com/csstools/postcss-plugins/tree/main/packages/css-color-parser#readme
+- **@csstools/css-parser-algorithms@4.0.0**
+  - Attribution: https://github.com/csstools/postcss-plugins/tree/main/packages/css-parser-algorithms#readme
+- **@csstools/css-tokenizer@4.0.0**
+  - Attribution: https://github.com/csstools/postcss-plugins/tree/main/packages/css-tokenizer#readme
+- **@esbuild/darwin-arm64@0.28.1**
+  - Attribution: https://github.com/evanw/esbuild#readme
+- **@eslint-community/eslint-utils@4.9.1**
+  - Attribution: Toru Nagashima — https://github.com/eslint-community/eslint-utils#readme
+- **@eslint-community/regexpp@4.12.2**
+  - Attribution: Toru Nagashima — https://github.com/eslint-community/regexpp#readme
+- **@eslint/eslintrc@3.3.6**
+  - Attribution: Nicholas C. Zakas — https://github.com/eslint/eslintrc#readme
+- **@eslint/js@9.39.5**
+  - Attribution: https://eslint.org
+- **@exodus/bytes@1.15.1**
+  - Attribution: Exodus Movement, Inc. — https://github.com/ExodusOSS/bytes
+- **@floating-ui/core@1.8.0**
+  - Attribution: atomiks — https://floating-ui.com
+- **@floating-ui/dom@1.8.0**
+  - Attribution: atomiks — https://floating-ui.com
+- **@floating-ui/utils@0.2.12**
+  - Attribution: atomiks — https://floating-ui.com
+- **@img/colour@1.1.0**
+  - Attribution: https://github.com/lovell/colour#readme
+- **@jridgewell/gen-mapping@0.3.13**
+  - Attribution: Justin Ridgewell — https://github.com/jridgewell/sourcemaps/tree/main/packages/gen-mapping
+- **@jridgewell/remapping@2.3.5**
+  - Attribution: Justin Ridgewell — https://github.com/jridgewell/sourcemaps/tree/main/packages/remapping
+- **@jridgewell/resolve-uri@3.1.2**
+  - Attribution: Justin Ridgewell — https://github.com/jridgewell/resolve-uri#readme
+- **@jridgewell/sourcemap-codec@1.5.5**
+  - Attribution: Justin Ridgewell — https://github.com/jridgewell/sourcemaps/tree/main/packages/sourcemap-codec
+- **@jridgewell/trace-mapping@0.3.31**
+  - Attribution: Justin Ridgewell — https://github.com/jridgewell/sourcemaps/tree/main/packages/trace-mapping
+- **@napi-rs/canvas@1.0.2**
+  - Attribution: https://github.com/Brooooooklyn/canvas#readme
+- **@napi-rs/canvas-darwin-arm64@1.0.2**
+  - Attribution: https://github.com/Brooooooklyn/canvas#readme
+- **@next/env@16.2.11**
+  - Attribution: Next.js Team — https://github.com/vercel/next.js#readme
+- **@next/eslint-plugin-next@16.2.11**
+  - Attribution: https://github.com/vercel/next.js#readme
+- **@next/swc-darwin-arm64@16.2.11**
+  - Attribution: https://github.com/vercel/next.js#readme
+- **@nodelib/fs.scandir@2.1.5**
+  - Attribution: https://github.com/nodelib/nodelib/tree/master#readme
+- **@nodelib/fs.stat@2.0.5**
+  - Attribution: https://github.com/nodelib/nodelib/tree/master#readme
+- **@nodelib/fs.walk@1.2.8**
+  - Attribution: https://github.com/nodelib/nodelib/tree/master#readme
+- **@nolyfill/is-core-module@1.0.39**
+  - Attribution: https://github.com/SukkaW/nolyfill#readme
+- **@oxc-project/types@0.139.0**
+  - Attribution: Boshen and oxc contributors — https://oxc.rs
+- **@radix-ui/primitive@1.1.3**
+  - Attribution: https://radix-ui.com/primitives
+- **@radix-ui/react-compose-refs@1.1.2**
+  - Attribution: https://radix-ui.com/primitives
+- **@radix-ui/react-primitive@2.1.3**
+  - Attribution: https://radix-ui.com/primitives
+- **@radix-ui/react-slot@1.2.3**
+  - Attribution: https://radix-ui.com/primitives
+- **@radix-ui/react-toggle@1.1.10**
+  - Attribution: https://radix-ui.com/primitives
+- **@radix-ui/react-use-controllable-state@1.2.2**
+  - Attribution: https://radix-ui.com/primitives
+- **@radix-ui/react-use-effect-event@0.0.2**
+  - Attribution: https://radix-ui.com/primitives
+- **@radix-ui/react-use-layout-effect@1.1.1**
+  - Attribution: https://radix-ui.com/primitives
+- **@rolldown/binding-darwin-arm64@1.1.5**
+  - Attribution: https://rolldown.rs/
+- **@rolldown/pluginutils@1.0.1**
+  - Attribution: https://github.com/rolldown/plugins/tree/main/packages/pluginutils#readme
+- **@rtsao/scc@1.1.0**
+  - Attribution: https://github.com/rtsao/scc#readme
+- **@standard-schema/spec@1.1.0**
+  - Attribution: Colin McDonnell — https://standardschema.dev
+- **@tailwindcss/node@4.3.2**
+  - Attribution: https://tailwindcss.com
+- **@tailwindcss/oxide@4.3.2**
+  - Attribution: https://github.com/tailwindlabs/tailwindcss#readme
+- **@tailwindcss/oxide-darwin-arm64@4.3.2**
+  - Attribution: https://github.com/tailwindlabs/tailwindcss#readme
+- **@tailwindcss/postcss@4.3.2**
+  - Attribution: https://tailwindcss.com
+- **@testing-library/dom@10.4.1**
+  - Attribution: Kent C. Dodds — https://github.com/testing-library/dom-testing-library#readme
+- **@testing-library/react@16.3.2**
+  - Attribution: Kent C. Dodds — https://github.com/testing-library/react-testing-library#readme
+- **@testing-library/user-event@14.6.1**
+  - Attribution: Giorgio Polvara — https://github.com/testing-library/user-event#readme
+- **@tiptap/core@3.28.0**
+  - Attribution: https://tiptap.dev
+- **@tiptap/extension-blockquote@3.28.0**
+  - Attribution: https://tiptap.dev
+- **@tiptap/extension-bold@3.28.0**
+  - Attribution: https://tiptap.dev
+- **@tiptap/extension-bubble-menu@3.28.0**
+  - Attribution: https://tiptap.dev
+- **@tiptap/extension-bullet-list@3.28.0**
+  - Attribution: https://tiptap.dev
+- **@tiptap/extension-code@3.28.0**
+  - Attribution: https://tiptap.dev
+- **@tiptap/extension-code-block@3.28.0**
+  - Attribution: https://tiptap.dev
+- **@tiptap/extension-document@3.28.0**
+  - Attribution: https://tiptap.dev
+- **@tiptap/extension-dropcursor@3.28.0**
+  - Attribution: https://tiptap.dev
+- **@tiptap/extension-floating-menu@3.28.0**
+  - Attribution: https://tiptap.dev
+- **@tiptap/extension-gapcursor@3.28.0**
+  - Attribution: https://tiptap.dev
+- **@tiptap/extension-hard-break@3.28.0**
+  - Attribution: https://tiptap.dev
+- **@tiptap/extension-heading@3.28.0**
+  - Attribution: https://tiptap.dev
+- **@tiptap/extension-horizontal-rule@3.28.0**
+  - Attribution: https://tiptap.dev
+- **@tiptap/extension-image@3.28.0**
+  - Attribution: https://tiptap.dev
+- **@tiptap/extension-italic@3.28.0**
+  - Attribution: https://tiptap.dev
+- **@tiptap/extension-link@3.28.0**
+  - Attribution: https://tiptap.dev
+- **@tiptap/extension-list@3.28.0**
+  - Attribution: https://tiptap.dev
+- **@tiptap/extension-list-item@3.28.0**
+  - Attribution: https://tiptap.dev
+- **@tiptap/extension-list-keymap@3.28.0**
+  - Attribution: https://tiptap.dev
+- **@tiptap/extension-ordered-list@3.28.0**
+  - Attribution: https://tiptap.dev
+- **@tiptap/extension-paragraph@3.28.0**
+  - Attribution: https://tiptap.dev
+- **@tiptap/extension-strike@3.28.0**
+  - Attribution: https://tiptap.dev
+- **@tiptap/extension-text@3.28.0**
+  - Attribution: https://tiptap.dev
+- **@tiptap/extension-underline@3.28.0**
+  - Attribution: https://tiptap.dev
+- **@tiptap/extensions@3.28.0**
+  - Attribution: https://tiptap.dev
+- **@tiptap/pm@3.28.0**
+  - Attribution: https://tiptap.dev
+- **@tiptap/react@3.28.0**
+  - Attribution: https://tiptap.dev
+- **@tiptap/starter-kit@3.28.0**
+  - Attribution: https://tiptap.dev
+- **@types/archiver@8.0.0**
+  - Attribution: https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/archiver
+- **@types/aria-query@5.0.4**
+  - Attribution: https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/aria-query
+- **@types/better-sqlite3@7.6.13**
+  - Attribution: https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/better-sqlite3
+- **@types/chai@5.2.3**
+  - Attribution: https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/chai
+- **@types/d3-array@3.0.3**
+  - Attribution: https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/d3-array
+- **@types/d3-color@3.1.0**
+  - Attribution: https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/d3-color
+- **@types/d3-delaunay@6.0.1**
+  - Attribution: https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/d3-delaunay
+- **@types/d3-format@3.0.1**
+  - Attribution: https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/d3-format
+- **@types/d3-geo@3.1.0**
+  - Attribution: https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/d3-geo
+- **@types/d3-interpolate@3.0.1**
+  - Attribution: https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/d3-interpolate
+- **@types/d3-path@3.1.1**
+  - Attribution: https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/d3-path
+- **@types/d3-scale@4.0.2**
+  - Attribution: https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/d3-scale
+- **@types/d3-shape@3.1.7**
+  - Attribution: https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/d3-shape
+- **@types/d3-time@3.0.0**
+  - Attribution: https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/d3-time
+- **@types/d3-time-format@2.1.0**
+  - Attribution: https://github.com/DefinitelyTyped/DefinitelyTyped#readme
+- **@types/deep-eql@4.0.2**
+  - Attribution: https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/deep-eql
+- **@types/estree@1.0.9**
+  - Attribution: https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/estree
+- **@types/geojson@7946.0.16**
+  - Attribution: https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/geojson
+- **@types/json-schema@7.0.15**
+  - Attribution: https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/json-schema
+- **@types/json5@0.0.29**
+  - Attribution: Jason Swearingen — https://github.com/DefinitelyTyped/DefinitelyTyped#readme
+- **@types/lodash@4.17.25**
+  - Attribution: https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/lodash
+- **@types/node@24.13.3, 26.1.1**
+  - Attribution: https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/node
+- **@types/nodemailer@8.0.1**
+  - Attribution: https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/nodemailer
+- **@types/react@19.2.17**
+  - Attribution: https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react
+- **@types/react-dom@19.2.3**
+  - Attribution: https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react-dom
+- **@types/react-reconciler@0.28.9, 0.33.0**
+  - Attribution: https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react-reconciler
+- **@types/readdir-glob@1.1.5**
+  - Attribution: https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/readdir-glob
+- **@types/sanitize-html@2.16.1**
+  - Attribution: https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/sanitize-html
+- **@types/use-sync-external-store@0.0.6**
+  - Attribution: https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/use-sync-external-store
+- **@types/yauzl@3.4.0**
+  - Attribution: https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/yauzl
+- **@typescript-eslint/eslint-plugin@8.64.0**
+  - Attribution: https://typescript-eslint.io/packages/eslint-plugin
+- **@typescript-eslint/parser@8.64.0**
+  - Attribution: https://typescript-eslint.io/packages/parser
+- **@typescript-eslint/project-service@8.64.0**
+  - Attribution: https://typescript-eslint.io
+- **@typescript-eslint/scope-manager@8.64.0**
+  - Attribution: https://typescript-eslint.io/packages/scope-manager
+- **@typescript-eslint/tsconfig-utils@8.64.0**
+  - Attribution: https://typescript-eslint.io
+- **@typescript-eslint/type-utils@8.64.0**
+  - Attribution: https://typescript-eslint.io
+- **@typescript-eslint/types@8.64.0**
+  - Attribution: https://typescript-eslint.io
+- **@typescript-eslint/typescript-estree@8.64.0**
+  - Attribution: https://typescript-eslint.io/packages/typescript-estree
+- **@typescript-eslint/utils@8.64.0**
+  - Attribution: https://typescript-eslint.io/packages/utils
+- **@typescript-eslint/visitor-keys@8.64.0**
+  - Attribution: https://typescript-eslint.io
+- **@unrs/resolver-binding-darwin-arm64@1.12.2**
+  - Attribution: https://github.com/unrs/unrs-resolver
+- **@visx/curve@4.0.1-alpha.0**
+  - Attribution: @hshoff — https://github.com/airbnb/visx#readme
+- **@visx/event@4.0.1-alpha.0**
+  - Attribution: @hshoff — https://github.com/airbnb/visx#readme
+- **@visx/grid@4.0.1-alpha.0**
+  - Attribution: @hshoff — https://github.com/airbnb/visx#readme
+- **@visx/group@4.0.1-alpha.0**
+  - Attribution: @hshoff — https://github.com/airbnb/visx#readme
+- **@visx/point@4.0.1-alpha.0**
+  - Attribution: @hshoff — https://github.com/airbnb/visx#readme
+- **@visx/responsive@4.0.1-alpha.0**
+  - Attribution: @hshoff — https://github.com/airbnb/visx#readme
+- **@visx/scale@4.0.1-alpha.0**
+  - Attribution: https://github.com/airbnb/visx#readme
+- **@visx/shape@4.0.1-alpha.0**
+  - Attribution: @hshoff — https://github.com/airbnb/visx#readme
+- **@vitest/expect@4.1.10**
+  - Attribution: https://vitest.dev/api/expect
+- **@vitest/mocker@4.1.10**
+  - Attribution: https://github.com/vitest-dev/vitest/tree/main/packages/mocker
+- **@vitest/pretty-format@4.1.10**
+  - Attribution: https://github.com/vitest-dev/vitest/tree/main/packages/pretty-format
+- **@vitest/runner@4.1.10**
+  - Attribution: https://vitest.dev/api/advanced/runner
+- **@vitest/snapshot@4.1.10**
+  - Attribution: https://vitest.dev/guide/snapshot
+- **@vitest/spy@4.1.10**
+  - Attribution: https://vitest.dev/api/mock
+- **@vitest/utils@4.1.10**
+  - Attribution: https://github.com/vitest-dev/vitest/tree/main/packages/utils
+- **abort-controller@3.0.0**
+  - Attribution: Toru Nagashima — https://github.com/mysticatea/abort-controller#readme
+- **acorn@8.17.0**
+  - Attribution: https://github.com/acornjs/acorn
+- **acorn-jsx@5.3.2**
+  - Attribution: https://github.com/acornjs/acorn-jsx
+- **ajv@6.15.0, 8.20.0**
+  - Attribution: Evgeny Poberezkin — https://ajv.js.org
+- **ansi-regex@5.0.1**
+  - Attribution: Sindre Sorhus — https://github.com/chalk/ansi-regex#readme
+- **ansi-styles@4.3.0, 5.2.0**
+  - Attribution: Sindre Sorhus — https://github.com/chalk/ansi-styles#readme
+- **archiver@8.0.0**
+  - Attribution: Chris Talkington — https://github.com/archiverjs/node-archiver
+- **array-buffer-byte-length@1.0.2**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/array-buffer-byte-length#readme
+- **array-includes@3.1.9**
+  - Attribution: Jordan Harband — https://github.com/es-shims/array-includes#readme
+- **array.prototype.findlast@1.2.5**
+  - Attribution: Jordan Harband — https://github.com/es-shims/Array.prototype.findLast#readme
+- **array.prototype.findlastindex@1.2.6**
+  - Attribution: Jordan Harband — https://github.com/es-shims/Array.prototype.findLastIndex#readme
+- **array.prototype.flat@1.3.3**
+  - Attribution: Jordan Harband — https://github.com/es-shims/Array.prototype.flat#readme
+- **array.prototype.flatmap@1.3.3**
+  - Attribution: Jordan Harband — https://github.com/es-shims/Array.prototype.flatMap#readme
+- **array.prototype.tosorted@1.1.4**
+  - Attribution: Jordan Harband — https://github.com/es-shims/Array.prototype.toSorted#readme
+- **arraybuffer.prototype.slice@1.0.4**
+  - Attribution: Jordan Harband — https://github.com/es-shims/ArrayBuffer.prototype.slice#readme
+- **assertion-error@2.0.1**
+  - Attribution: Jake Luer — https://github.com/chaijs/assertion-error#readme
+- **ast-types-flow@0.0.8**
+  - Attribution: kyldvs — https://github.com/kyldvs/ast-types-flow#readme
+- **async@3.2.6**
+  - Attribution: Caolan McMahon — https://caolan.github.io/async/
+- **async-function@1.0.0**
+  - Attribution: Jordan Harbamd — https://github.com/ljharb/async-function#readme
+- **available-typed-arrays@1.0.7**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/available-typed-arrays#readme
+- **aws-ssl-profiles@1.1.2**
+  - Attribution: https://github.com/wellwelwel — https://github.com/mysqljs/aws-ssl-profiles#readme
+- **balanced-match@1.0.2, 4.0.4**
+  - Attribution: https://github.com/juliangruber/balanced-match#readme
+- **base64-js@1.5.1**
+  - Attribution: T. Jameson Little — https://github.com/beatgammit/base64-js
+- **better-result@2.9.2**
+  - Attribution: Dillon Mulroy — https://better-result.dev
+- **better-sqlite3@12.11.1**
+  - Attribution: Joshua Wise — http://github.com/WiseLibs/better-sqlite3
+- **bidi-js@1.0.3**
+  - Attribution: Jason Johnston — https://github.com/lojjic/bidi-js#readme
+- **bindings@1.5.0**
+  - Attribution: Nathan Rajlich — https://github.com/TooTallNate/node-bindings
+- **bl@4.1.0**
+  - Attribution: https://github.com/rvagg/bl
+- **bmp-js@0.1.0**
+  - Attribution: shaozilee — https://github.com/shaozilee/bmp-js#readme
+- **brace-expansion@1.1.18, 5.0.9**
+  - Attribution: https://github.com/juliangruber/brace-expansion#readme
+- **braces@3.0.3**
+  - Attribution: Jon Schlinkert — https://github.com/micromatch/braces
+- **browserslist@4.28.6**
+  - Attribution: Andrey Sitnik — https://github.com/browserslist/browserslist#readme
+- **buffer@5.7.1, 6.0.3**
+  - Attribution: Feross Aboukhadijeh — https://github.com/feross/buffer
+- **buffer-crc32@1.0.0**
+  - Attribution: Brian J. Brennan — https://github.com/brianloveswords/buffer-crc32
+- **c12@3.3.4**
+  - Attribution: https://github.com/unjs/c12#readme
+- **call-bind@1.0.9**
+  - Attribution: Jordan Harband — https://github.com/ljharb/call-bind#readme
+- **call-bind-apply-helpers@1.0.2**
+  - Attribution: Jordan Harband — https://github.com/ljharb/call-bind-apply-helpers#readme
+- **call-bound@1.0.4**
+  - Attribution: Jordan Harband — https://github.com/ljharb/call-bound#readme
+- **callsites@3.1.0**
+  - Attribution: Sindre Sorhus — https://github.com/sindresorhus/callsites#readme
+- **chai@6.2.2**
+  - Attribution: Jake Luer — http://chaijs.com
+- **chalk@4.1.2**
+  - Attribution: https://github.com/chalk/chalk#readme
+- **chokidar@5.0.0**
+  - Attribution: Paul Miller — https://github.com/paulmillr/chokidar
+- **classnames@2.5.1**
+  - Attribution: Jed Watson — https://github.com/JedWatson/classnames#readme
+- **client-only@0.0.1**
+  - Attribution: https://reactjs.org/
+- **clsx@2.1.1**
+  - Attribution: Luke Edwards — https://github.com/lukeed/clsx#readme
+- **color-convert@2.0.1**
+  - Attribution: Heather Arthur — https://github.com/Qix-/color-convert#readme
+- **color-name@1.1.4**
+  - Attribution: DY — https://github.com/colorjs/color-name
+- **compress-commons@7.0.1**
+  - Attribution: Chris Talkington — https://github.com/archiverjs/node-compress-commons
+- **concat-map@0.0.1**
+  - Attribution: James Halliday — https://github.com/substack/node-concat-map#readme
+- **confbox@0.2.4**
+  - Attribution: https://github.com/unjs/confbox#readme
+- **convert-source-map@2.0.0**
+  - Attribution: Thorsten Lorenz — https://github.com/thlorenz/convert-source-map
+- **core-util-is@1.0.3**
+  - Attribution: Isaac Z. Schlueter — https://github.com/isaacs/core-util-is#readme
+- **crc32-stream@7.0.1**
+  - Attribution: Chris Talkington — https://github.com/archiverjs/node-crc32-stream
+- **cross-spawn@7.0.6**
+  - Attribution: André Cruz — https://github.com/moxystudio/node-cross-spawn
+- **css-tree@3.2.1**
+  - Attribution: Roman Dvornov — https://github.com/csstree/csstree#readme
+- **csstype@3.2.3**
+  - Attribution: Fredrik Nicol — https://github.com/frenic/csstype#readme
+- **data-urls@7.0.0**
+  - Attribution: Domenic Denicola — https://github.com/jsdom/data-urls#readme
+- **data-view-buffer@1.0.2**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/data-view-buffer#readme
+- **data-view-byte-length@1.0.2**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/data-view-byte-length#readme
+- **data-view-byte-offset@1.0.1**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/data-view-byte-offset#readme
+- **date-fns@4.4.0**
+  - Attribution: https://github.com/date-fns/date-fns#readme
+- **dayjs@1.11.21**
+  - Attribution: iamkun — https://day.js.org
+- **debug@3.2.7, 4.4.3**
+  - Attribution: Josh Junon — https://github.com/debug-js/debug#readme
+- **decimal.js@10.6.0**
+  - Attribution: Michael Mclaughlin — https://github.com/MikeMcl/decimal.js#readme
+- **decompress-response@6.0.0**
+  - Attribution: Sindre Sorhus — https://github.com/sindresorhus/decompress-response#readme
+- **deep-extend@0.6.0**
+  - Attribution: Viacheslav Lotsmanov — https://github.com/unclechu/node-deep-extend
+- **deep-is@0.1.4**
+  - Attribution: Thorsten Lorenz — https://github.com/thlorenz/deep-is#readme
+- **deepmerge@4.3.1**
+  - Attribution: https://github.com/TehShrike/deepmerge
+- **define-data-property@1.1.4**
+  - Attribution: Jordan Harband — https://github.com/ljharb/define-data-property#readme
+- **define-properties@1.2.1**
+  - Attribution: Jordan Harband — https://github.com/ljharb/define-properties#readme
+- **defu@6.1.7**
+  - Attribution: https://github.com/unjs/defu#readme
+- **dequal@2.0.3**
+  - Attribution: Luke Edwards — https://github.com/lukeed/dequal#readme
+- **destr@2.0.5**
+  - Attribution: https://github.com/unjs/destr#readme
+- **dom-accessibility-api@0.5.16**
+  - Attribution: https://github.com/eps1lon/dom-accessibility-api#readme
+- **dom-serializer@2.0.0, 3.1.1**
+  - Attribution: Felix Boehm — https://github.com/cheeriojs/dom-serializer#readme
+- **dunder-proto@1.0.1**
+  - Attribution: Jordan Harband — https://github.com/es-shims/dunder-proto#readme
+- **effect@3.20.0**
+  - Attribution: https://effect.website
+- **emoji-regex@9.2.2**
+  - Attribution: Mathias Bynens — https://mths.be/emoji-regex
+- **empathic@2.0.0**
+  - Attribution: Luke Edwards — https://github.com/lukeed/empathic#readme
+- **end-of-stream@1.4.5**
+  - Attribution: Mathias Buus — https://github.com/mafintosh/end-of-stream
+- **enhanced-resolve@5.21.6**
+  - Attribution: Tobias Koppers @sokra — http://github.com/webpack/enhanced-resolve
+- **env-paths@3.0.0**
+  - Attribution: Sindre Sorhus — https://github.com/sindresorhus/env-paths#readme
+- **es-abstract@1.24.2**
+  - Attribution: Jordan Harband — https://github.com/ljharb/es-abstract#readme
+- **es-abstract-get@1.0.0**
+  - Attribution: Jordan Harband — https://github.com/ljharb/es-abstract-get#readme
+- **es-define-property@1.0.1**
+  - Attribution: Jordan Harband — https://github.com/ljharb/es-define-property#readme
+- **es-errors@1.3.0**
+  - Attribution: Jordan Harband — https://github.com/ljharb/es-errors#readme
+- **es-iterator-helpers@1.4.0**
+  - Attribution: Jordan Harband — https://github.com/es-shims/iterator-helpers#readme
+- **es-module-lexer@2.3.1**
+  - Attribution: Guy Bedford — https://github.com/guybedford/es-module-lexer#readme
+- **es-object-atoms@1.1.2**
+  - Attribution: Jordan Harband — https://github.com/ljharb/es-object-atoms#readme
+- **es-set-tostringtag@2.1.0**
+  - Attribution: Jordan Harband — https://github.com/es-shims/es-set-tostringtag#readme
+- **es-shim-unscopables@1.1.0**
+  - Attribution: Jordan Harband — https://github.com/ljharb/es-shim-unscopables#readme
+- **es-to-primitive@1.3.4**
+  - Attribution: Jordan Harband — https://github.com/ljharb/es-to-primitive#readme
+- **esbuild@0.28.1**
+  - Attribution: https://github.com/evanw/esbuild#readme
+- **escalade@3.2.0**
+  - Attribution: Luke Edwards — https://github.com/lukeed/escalade#readme
+- **escape-string-regexp@4.0.0**
+  - Attribution: Sindre Sorhus — https://github.com/sindresorhus/escape-string-regexp#readme
+- **eslint@9.39.5**
+  - Attribution: Nicholas C. Zakas — https://eslint.org
+- **eslint-config-next@16.2.11**
+  - Attribution: https://nextjs.org/docs/app/api-reference/config/eslint
+- **eslint-import-resolver-node@0.3.10**
+  - Attribution: Ben Mosher — https://github.com/import-js/eslint-plugin-import
+- **eslint-module-utils@2.14.0**
+  - Attribution: Ben Mosher — https://github.com/import-js/eslint-plugin-import#readme
+- **eslint-plugin-import@2.32.0**
+  - Attribution: Ben Mosher — https://github.com/import-js/eslint-plugin-import
+- **eslint-plugin-jsx-a11y@6.10.2**
+  - Attribution: Ethan Cohen — https://github.com/jsx-eslint/eslint-plugin-jsx-a11y#readme
+- **eslint-plugin-react@7.37.5**
+  - Attribution: Yannick Croissant — https://github.com/jsx-eslint/eslint-plugin-react
+- **eslint-plugin-react-hooks@7.1.1**
+  - Attribution: https://react.dev/
+- **estree-walker@3.0.3**
+  - Attribution: Rich Harris — https://github.com/Rich-Harris/estree-walker#readme
+- **event-target-shim@5.0.1**
+  - Attribution: Toru Nagashima — https://github.com/mysticatea/event-target-shim
+- **events@3.3.0**
+  - Attribution: Irakli Gozalishvili — https://github.com/Gozala/events#readme
+- **exsolve@1.1.0**
+  - Attribution: https://github.com/unjs/exsolve#readme
+- **fast-check@3.23.2**
+  - Attribution: Nicolas DUBIEN — https://fast-check.dev/
+- **fast-decode-uri-component@1.0.1**
+  - Attribution: Tomas Della Vedova - @delvedor — https://github.com/delvedor/fast-decode-uri-component#readme
+- **fast-deep-equal@3.1.3**
+  - Attribution: Evgeny Poberezkin — https://github.com/epoberezkin/fast-deep-equal#readme
+- **fast-equals@5.4.1**
+  - Attribution: Tony Quetano — https://github.com/planttheidea/fast-equals#readme
+- **fast-fifo@1.3.2**
+  - Attribution: Mathias Buus — https://github.com/mafintosh/fast-fifo
+- **fast-glob@3.3.1**
+  - Attribution: Denis Malinochkin — https://github.com/mrmlnc/fast-glob#readme
+- **fast-json-stable-stringify@2.1.0**
+  - Attribution: James Halliday — https://github.com/epoberezkin/fast-json-stable-stringify
+- **fast-levenshtein@2.0.6**
+  - Attribution: Ramesh Nair — https://github.com/hiddentao/fast-levenshtein#readme
+- **fast-querystring@1.1.2**
+  - Attribution: Yagiz Nizipli — https://github.com/anonrig/fast-querystring#readme
+- **fdir@6.5.0**
+  - Attribution: thecodrr — https://github.com/thecodrr/fdir#readme
+- **file-entry-cache@8.0.0**
+  - Attribution: Jared Wray — https://github.com/jaredwray/file-entry-cache#readme
+- **file-uri-to-path@1.0.0**
+  - Attribution: Nathan Rajlich — https://github.com/TooTallNate/file-uri-to-path
+- **fill-range@7.1.1**
+  - Attribution: Jon Schlinkert — https://github.com/jonschlinkert/fill-range
+- **find-my-way@9.7.0**
+  - Attribution: Tomas Della Vedova - @delvedor — https://github.com/delvedor/find-my-way#readme
+- **find-up@5.0.0**
+  - Attribution: Sindre Sorhus — https://github.com/sindresorhus/find-up#readme
+- **flat-cache@4.0.1**
+  - Attribution: Jared Wray — https://github.com/jaredwray/flat-cache#readme
+- **for-each@0.3.5**
+  - Attribution: Raynos — https://github.com/Raynos/for-each
+- **fs-constants@1.0.0**
+  - Attribution: Mathias Buus — https://github.com/mafintosh/fs-constants
+- **fsevents@2.3.2, 2.3.3**
+  - Attribution: https://github.com/fsevents/fsevents
+- **function-bind@1.1.2**
+  - Attribution: Raynos — https://github.com/Raynos/function-bind
+- **function.prototype.name@1.2.0**
+  - Attribution: Jordan Harband — https://github.com/es-shims/Function.prototype.name#readme
+- **functions-have-names@1.2.3**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/functions-have-names#readme
+- **generate-function@2.3.1**
+  - Attribution: Mathias Buus — https://github.com/mafintosh/generate-function
+- **generator-function@2.0.1**
+  - Attribution: Jordan Harbamd — https://github.com/TimothyGu/generator-function#readme
+- **gensync@1.0.0-beta.2**
+  - Attribution: Logan Smyth — https://github.com/loganfsmyth/gensync
+- **get-intrinsic@1.3.0**
+  - Attribution: Jordan Harband — https://github.com/ljharb/get-intrinsic#readme
+- **get-port-please@3.2.0**
+  - Attribution: https://github.com/unjs/get-port-please#readme
+- **get-proto@1.0.1**
+  - Attribution: Jordan Harband — https://github.com/ljharb/get-proto#readme
+- **get-symbol-description@1.1.0**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/get-symbol-description#readme
+- **get-tsconfig@4.14.0**
+  - Attribution: Hiroki Osame — https://github.com/privatenumber/get-tsconfig#readme
+- **giget@3.3.0**
+  - Attribution: https://github.com/unjs/giget#readme
+- **github-from-package@0.0.0**
+  - Attribution: James Halliday — https://github.com/substack/github-from-package
+- **globals@14.0.0, 16.4.0**
+  - Attribution: Sindre Sorhus — https://github.com/sindresorhus/globals#readme
+- **globalthis@1.0.4**
+  - Attribution: Jordan Harband — https://github.com/ljharb/System.global#readme
+- **gopd@1.2.0**
+  - Attribution: Jordan Harband — https://github.com/ljharb/gopd#readme
+- **grammex@3.1.13**
+  - Attribution: https://github.com/fabiospampinato/grammex#readme
+- **graphmatch@1.1.1**
+  - Attribution: https://github.com/fabiospampinato/graphmatch#readme
+- **has-bigints@1.1.0**
+  - Attribution: Jordan Harband — https://github.com/ljharb/has-bigints#readme
+- **has-flag@4.0.0**
+  - Attribution: Sindre Sorhus — https://github.com/sindresorhus/has-flag#readme
+- **has-property-descriptors@1.0.2**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/has-property-descriptors#readme
+- **has-proto@1.2.0**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/has-proto#readme
+- **has-symbols@1.1.0**
+  - Attribution: Jordan Harband — https://github.com/ljharb/has-symbols#readme
+- **has-tostringtag@1.0.2**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/has-tostringtag#readme
+- **hasown@2.0.4**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/hasOwn#readme
+- **hermes-estree@0.25.1**
+  - Attribution: https://github.com/facebook/hermes#readme
+- **hermes-parser@0.25.1**
+  - Attribution: https://github.com/facebook/hermes#readme
+- **html-encoding-sniffer@6.0.0**
+  - Attribution: Domenic Denicola — https://github.com/jsdom/html-encoding-sniffer#readme
+- **htmlparser2@10.1.0, 12.0.0**
+  - Attribution: Felix Boehm — https://github.com/fb55/htmlparser2#readme
+- **iconv-lite@0.7.3**
+  - Attribution: Alexander Shtuchkin — https://github.com/pillarjs/iconv-lite
+- **ignore@5.3.2, 7.0.6**
+  - Attribution: kael — https://github.com/kaelzhang/node-ignore#readme
+- **import-fresh@3.3.1**
+  - Attribution: Sindre Sorhus — https://github.com/sindresorhus/import-fresh#readme
+- **imurmurhash@0.1.4**
+  - Attribution: Jens Taylor — https://github.com/jensyt/imurmurhash-js
+- **internal-slot@1.1.0**
+  - Attribution: Jordan Harband — https://github.com/ljharb/internal-slot#readme
+- **is-array-buffer@3.0.5**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/is-array-buffer#readme
+- **is-async-function@2.1.1**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/is-async-function#readme
+- **is-bigint@1.1.0**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/is-bigint#readme
+- **is-boolean-object@1.2.2**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/is-boolean-object#readme
+- **is-bun-module@2.0.0**
+  - Attribution: SunsetTechuila — https://github.com/SunsetTechuila/is-bun-module
+- **is-callable@1.2.7**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/is-callable#readme
+- **is-core-module@2.16.2**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/is-core-module
+- **is-data-view@1.0.2**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/is-data-view#readme
+- **is-date-object@1.1.0**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/is-date-object#readme
+- **is-document.all@1.0.0**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/is-document.all#readme
+- **is-extglob@2.1.1**
+  - Attribution: Jon Schlinkert — https://github.com/jonschlinkert/is-extglob
+- **is-finalizationregistry@1.1.1**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/is-finalizationregistry#readme
+- **is-generator-function@1.1.2**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/is-generator-function#readme
+- **is-glob@4.0.3**
+  - Attribution: Jon Schlinkert — https://github.com/micromatch/is-glob
+- **is-map@2.0.3**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/is-map#readme
+- **is-negative-zero@2.0.3**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/is-negative-zero
+- **is-number@7.0.0**
+  - Attribution: Jon Schlinkert — https://github.com/jonschlinkert/is-number
+- **is-number-object@1.1.1**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/is-number-object#readme
+- **is-plain-object@5.0.0**
+  - Attribution: Jon Schlinkert — https://github.com/jonschlinkert/is-plain-object
+- **is-potential-custom-element-name@1.0.1**
+  - Attribution: Mathias Bynens — https://github.com/mathiasbynens/is-potential-custom-element-name
+- **is-property@1.0.2**
+  - Attribution: Mikola Lysenko — https://github.com/mikolalysenko/is-property#readme
+- **is-regex@1.2.1**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/is-regex
+- **is-set@2.0.3**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/is-set#readme
+- **is-shared-array-buffer@1.0.4**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/is-shared-array-buffer#readme
+- **is-stream@4.0.1**
+  - Attribution: Sindre Sorhus — https://github.com/sindresorhus/is-stream#readme
+- **is-string@1.1.1**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/is-string#readme
+- **is-symbol@1.1.1**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/is-symbol#readme
+- **is-typed-array@1.1.15**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/is-typed-array#readme
+- **is-url@1.2.4**
+  - Attribution: https://github.com/segmentio/is-url#readme
+- **is-weakmap@2.0.2**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/is-weakmap#readme
+- **is-weakref@1.1.1**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/is-weakref#readme
+- **is-weakset@2.0.4**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/is-weakset#readme
+- **isarray@1.0.0, 2.0.5**
+  - Attribution: Julian Gruber — https://github.com/juliangruber/isarray
+- **iterator.prototype@1.1.5**
+  - Attribution: Jordan Harband — https://github.com/ljharb/Iterator.prototype#readme
+- **its-fine@2.0.0**
+  - Attribution: Cody Bennett — https://github.com/pmndrs/its-fine
+- **jiti@2.7.0**
+  - Attribution: https://github.com/unjs/jiti#readme
+- **js-tokens@4.0.0**
+  - Attribution: Simon Lydell — https://github.com/lydell/js-tokens#readme
+- **js-yaml@4.3.1**
+  - Attribution: Vladimir Zapparov — https://github.com/nodeca/js-yaml#readme
+- **jsdom@29.1.1**
+  - Attribution: https://github.com/jsdom/jsdom#readme
+- **jsesc@3.1.0**
+  - Attribution: Mathias Bynens — https://mths.be/jsesc
+- **json-buffer@3.0.1**
+  - Attribution: Dominic Tarr — https://github.com/dominictarr/json-buffer
+- **json-schema-traverse@0.4.1, 1.0.0**
+  - Attribution: Evgeny Poberezkin — https://github.com/epoberezkin/json-schema-traverse#readme
+- **json-stable-stringify-without-jsonify@1.0.1**
+  - Attribution: James Halliday — https://github.com/samn/json-stable-stringify
+- **json5@1.0.2, 2.2.3**
+  - Attribution: Aseem Kishore — http://json5.org/
+- **jsx-ast-utils@3.3.5**
+  - Attribution: Ethan Cohen — https://github.com/jsx-eslint/jsx-ast-utils#readme
+- **keyv@4.5.4**
+  - Attribution: Jared Wray — https://github.com/jaredwray/keyv
+- **konva@10.3.0**
+  - Attribution: Anton Lavrenov — http://konvajs.org/
+- **language-tags@1.0.9**
+  - Attribution: Matthew Caruana Galizia — https://github.com/mattcg/language-tags
+- **launder@1.7.1**
+  - Attribution: Apostrophe Technologies, Inc. — https://github.com/apostrophecms/apostrophe/tree/main/packages/launder#readme
+- **lazystream@1.0.1**
+  - Attribution: Jonas Pommerening — https://github.com/jpommerening/node-lazystream
+- **levn@0.4.1**
+  - Attribution: George Zahariev — https://github.com/gkz/levn
+- **linkifyjs@4.3.3**
+  - Attribution: Nick Frasser — https://linkify.js.org
+- **locate-path@6.0.0**
+  - Attribution: Sindre Sorhus — https://github.com/sindresorhus/locate-path#readme
+- **lodash@4.18.1**
+  - Attribution: John-David Dalton — https://lodash.com/
+- **lodash.merge@4.6.2**
+  - Attribution: John-David Dalton — https://lodash.com/
+- **loose-envify@1.4.0**
+  - Attribution: Andres Suarez — https://github.com/zertosh/loose-envify
+- **lru.min@1.1.4**
+  - Attribution: https://github.com/wellwelwel — https://github.com/wellwelwel/lru.min#readme
+- **lz-string@1.5.0**
+  - Attribution: pieroxy — http://pieroxy.net/blog/pages/lz-string/index.html
+- **magic-string@0.30.21**
+  - Attribution: Rich Harris — https://github.com/Rich-Harris/magic-string#readme
+- **math-intrinsics@1.1.0**
+  - Attribution: Jordan Harband — https://github.com/es-shims/math-intrinsics#readme
+- **merge2@1.4.1**
+  - Attribution: https://github.com/teambition/merge2
+- **micromatch@4.0.8**
+  - Attribution: Jon Schlinkert — https://github.com/micromatch/micromatch
+- **mimic-response@3.1.0**
+  - Attribution: Sindre Sorhus — https://github.com/sindresorhus/mimic-response#readme
+- **minimist@1.2.8**
+  - Attribution: James Halliday — https://github.com/minimistjs/minimist
+- **mkdirp-classic@0.5.3**
+  - Attribution: Mathias Buus — https://github.com/mafintosh/mkdirp-classic
+- **ms@2.1.3**
+  - Attribution: https://github.com/vercel/ms#readme
+- **mysql2@3.15.3**
+  - Attribution: Andrey Sidorov — https://sidorares.github.io/node-mysql2/docs
+- **named-placeholders@1.1.6**
+  - Attribution: Andrey Sidorov — https://github.com/mysqljs/named-placeholders#readme
+- **nanoid@3.3.17**
+  - Attribution: Andrey Sitnik — https://github.com/ai/nanoid#readme
+- **napi-build-utils@2.0.0**
+  - Attribution: Jim Schlight — https://github.com/inspiredware/napi-build-utils#readme
+- **napi-postinstall@0.3.4**
+  - Attribution: JounQin — https://github.com/un-ts/napi-postinstall#readme
+- **natural-compare@1.4.0**
+  - Attribution: Lauri Rooden — https://github.com/litejs/natural-compare-lite#readme
+- **next@16.2.11**
+  - Attribution: https://nextjs.org
+- **node-abi@3.94.0**
+  - Attribution: Lukas Geiger — https://github.com/electron/node-abi#readme
+- **node-exports-info@1.6.2**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/node-exports-info#readme
+- **node-fetch@2.7.0**
+  - Attribution: David Frank — https://github.com/bitinn/node-fetch
+- **node-releases@2.0.51**
+  - Attribution: Sergey Rubanov — https://github.com/chicoxyzzy/node-releases#readme
+- **normalize-path@3.0.0**
+  - Attribution: Jon Schlinkert — https://github.com/jonschlinkert/normalize-path
+- **object-assign@4.1.1**
+  - Attribution: Sindre Sorhus — https://github.com/sindresorhus/object-assign#readme
+- **object-inspect@1.13.4**
+  - Attribution: James Halliday — https://github.com/inspect-js/object-inspect
+- **object-keys@1.1.1**
+  - Attribution: Jordan Harband — https://github.com/ljharb/object-keys#readme
+- **object.assign@4.1.7**
+  - Attribution: Jordan Harband — https://github.com/ljharb/object.assign#readme
+- **object.entries@1.1.9**
+  - Attribution: Jordan Harband — https://github.com/es-shims/Object.entries#readme
+- **object.fromentries@2.0.8**
+  - Attribution: Jordan Harband — https://github.com/es-shims/Object.fromEntries#readme
+- **object.groupby@1.0.3**
+  - Attribution: Jordan Harband — https://github.com/es-shims/Object.groupBy#readme
+- **object.values@1.2.1**
+  - Attribution: Jordan Harband — https://github.com/es-shims/Object.values#readme
+- **obug@2.1.3**
+  - Attribution: Kevin Deng — https://github.com/sxzz/obug#readme
+- **ohash@2.0.11**
+  - Attribution: https://github.com/unjs/ohash#readme
+- **opencollective-postinstall@2.0.3**
+  - Attribution: Xavier Damman — https://github.com/opencollective/opencollective-postinstall#readme
+- **optionator@0.9.4**
+  - Attribution: George Zahariev — https://github.com/gkz/optionator
+- **orderedmap@2.1.1**
+  - Attribution: Marijn Haverbeke — https://github.com/marijnh/orderedmap#readme
+- **own-keys@1.0.1**
+  - Attribution: Jordan Harband — https://github.com/ljharb/own-keys#readme
+- **p-limit@3.1.0**
+  - Attribution: Sindre Sorhus — https://github.com/sindresorhus/p-limit#readme
+- **p-locate@5.0.0**
+  - Attribution: Sindre Sorhus — https://github.com/sindresorhus/p-locate#readme
+- **parent-module@1.0.1**
+  - Attribution: Sindre Sorhus — https://github.com/sindresorhus/parent-module#readme
+- **parse-srcset@1.0.2**
+  - Attribution: Alex Bell — https://github.com/albell/parse-srcset#readme
+- **parse5@8.0.1**
+  - Attribution: Ivan Nikulin — https://parse5.js.org
+- **path-exists@4.0.0**
+  - Attribution: Sindre Sorhus — https://github.com/sindresorhus/path-exists#readme
+- **path-key@3.1.1**
+  - Attribution: Sindre Sorhus — https://github.com/sindresorhus/path-key#readme
+- **path-parse@1.0.7**
+  - Attribution: Javier Blanco — https://github.com/jbgutierrez/path-parse#readme
+- **pathe@2.0.3**
+  - Attribution: https://github.com/unjs/pathe#readme
+- **pend@1.2.0**
+  - Attribution: Andrew Kelley — https://github.com/andrewrk/node-pend#readme
+- **perfect-debounce@2.1.0**
+  - Attribution: https://github.com/unjs/perfect-debounce#readme
+- **picomatch@2.3.2, 4.0.5**
+  - Attribution: Jon Schlinkert — https://github.com/micromatch/picomatch
+- **pkg-types@2.3.1**
+  - Attribution: https://github.com/unjs/pkg-types#readme
+- **possible-typed-array-names@1.1.0**
+  - Attribution: Jordan Harband — https://github.com/ljharb/possible-typed-array-names#readme
+- **postcss@8.5.26**
+  - Attribution: Andrey Sitnik — https://postcss.org/
+- **prebuild-install@7.1.3**
+  - Attribution: Mathias Buus — https://github.com/prebuild/prebuild-install
+- **prelude-ls@1.2.1**
+  - Attribution: George Zahariev — http://preludels.com
+- **pretty-format@27.5.1**
+  - Attribution: James Kyle — https://github.com/facebook/jest#readme
+- **process@0.11.10**
+  - Attribution: Roman Shtylman — https://github.com/shtylman/node-process#readme
+- **process-nextick-args@2.0.1**
+  - Attribution: https://github.com/calvinmetcalf/process-nextick-args
+- **prop-types@15.8.1**
+  - Attribution: https://facebook.github.io/react/
+- **proper-lockfile@4.1.2**
+  - Attribution: André Cruz — https://github.com/moxystudio/node-proper-lockfile
+- **prosemirror-changeset@2.4.1**
+- **prosemirror-commands@1.7.1**
+  - Attribution: https://github.com/prosemirror/prosemirror-commands#readme
+- **prosemirror-dropcursor@1.8.3**
+- **prosemirror-gapcursor@1.4.1**
+  - Attribution: https://github.com/prosemirror/prosemirror-gapcursor#readme
+- **prosemirror-history@1.5.0**
+  - Attribution: https://github.com/prosemirror/prosemirror-history#readme
+- **prosemirror-inputrules@1.5.1**
+  - Attribution: https://github.com/prosemirror/prosemirror-inputrules#readme
+- **prosemirror-keymap@1.2.3**
+  - Attribution: https://github.com/prosemirror/prosemirror-keymap#readme
+- **prosemirror-model@1.25.11**
+- **prosemirror-schema-list@1.5.1**
+  - Attribution: https://github.com/prosemirror/prosemirror-schema-list#readme
+- **prosemirror-state@1.4.4**
+  - Attribution: https://github.com/prosemirror/prosemirror-state#readme
+- **prosemirror-tables@1.8.5**
+  - Attribution: https://github.com/ProseMirror/prosemirror-tables#readme
+- **prosemirror-transform@1.12.0**
+  - Attribution: https://github.com/prosemirror/prosemirror-transform#readme
+- **prosemirror-view@1.42.1**
+- **pump@3.0.4**
+  - Attribution: Mathias Buus Madsen — https://github.com/mafintosh/pump#readme
+- **punycode@2.3.1**
+  - Attribution: Mathias Bynens — https://mths.be/punycode
+- **pure-rand@6.1.0**
+  - Attribution: Nicolas DUBIEN — https://github.com/dubzzz/pure-rand#readme
+- **queue-microtask@1.2.3**
+  - Attribution: Feross Aboukhadijeh — https://github.com/feross/queue-microtask
+- **rc9@3.0.1**
+  - Attribution: https://github.com/unjs/rc9#readme
+- **react@19.2.7**
+  - Attribution: https://react.dev/
+- **react-dom@19.2.7**
+  - Attribution: https://react.dev/
+- **react-is@16.13.1, 17.0.2**
+  - Attribution: https://reactjs.org/
+- **react-konva@19.2.5**
+  - Attribution: https://github.com/konvajs/react-konva#readme
+- **react-reconciler@0.33.0**
+  - Attribution: https://react.dev/
+- **readable-stream@2.3.8, 3.6.2, 4.7.0**
+  - Attribution: https://github.com/nodejs/readable-stream
+- **readdirp@5.0.0**
+  - Attribution: Thorsten Lorenz — https://github.com/paulmillr/readdirp
+- **reflect.getprototypeof@1.0.10**
+  - Attribution: Jordan Harband — https://github.com/es-shims/Reflect.getPrototypeOf
+- **regenerator-runtime@0.13.11**
+  - Attribution: Ben Newman — https://github.com/facebook/regenerator/tree/main#readme
+- **regexp.prototype.flags@1.5.4**
+  - Attribution: Jordan Harband — https://github.com/es-shims/RegExp.prototype.flags#readme
+- **remeda@2.33.4**
+  - Attribution: Łukasz Sentkiewicz — https://remedajs.com/
+- **require-from-string@2.0.2**
+  - Attribution: Vsevolod Strukchinsky — https://github.com/floatdrop/require-from-string#readme
+- **resolve@2.0.0-next.7**
+  - Attribution: James Halliday — https://github.com/browserify/resolve#readme
+- **resolve-from@4.0.0**
+  - Attribution: Sindre Sorhus — https://github.com/sindresorhus/resolve-from#readme
+- **resolve-pkg-maps@1.0.0**
+  - Attribution: Hiroki Osame — https://github.com/privatenumber/resolve-pkg-maps#readme
+- **ret@0.5.0**
+  - Attribution: fent — https://github.com/fent/ret.js#readme
+- **retry@0.12.0**
+  - Attribution: Tim Koschützki — https://github.com/tim-kos/node-retry
+- **reusify@1.1.0**
+  - Attribution: Matteo Collina — https://github.com/mcollina/reusify#readme
+- **rolldown@1.1.5**
+  - Attribution: https://rolldown.rs/
+- **rope-sequence@1.3.4**
+  - Attribution: Marijn Haverbeke — https://github.com/marijnh/rope-sequence#readme
+- **run-parallel@1.2.0**
+  - Attribution: Feross Aboukhadijeh — https://github.com/feross/run-parallel
+- **safe-array-concat@1.1.4**
+  - Attribution: Jordan Harband — https://github.com/ljharb/safe-array-concat#readme
+- **safe-buffer@5.1.2, 5.2.1**
+  - Attribution: Feross Aboukhadijeh — https://github.com/feross/safe-buffer
+- **safe-push-apply@1.0.0**
+  - Attribution: Jordan Harband — https://github.com/ljharb/safe-push-apply#readme
+- **safe-regex-test@1.1.0**
+  - Attribution: Jordan Harband — https://github.com/ljharb/safe-regex-test#readme
+- **safe-regex2@5.1.1**
+  - Attribution: James Halliday — https://github.com/fastify/safe-regex2
+- **safer-buffer@2.1.2**
+  - Attribution: Nikita Skovoroda — https://github.com/ChALkeR/safer-buffer#readme
+- **sanitize-html@2.17.6**
+  - Attribution: Apostrophe Technologies, Inc. — https://github.com/apostrophecms/apostrophe/tree/main/packages/sanitize-html#readme
+- **scheduler@0.27.0**
+  - Attribution: https://react.dev/
+- **seq-queue@0.0.5**
+  - Attribution: changchang — https://github.com/changchang/seq-queue
+- **server-only@0.0.1**
+  - Attribution: https://reactjs.org/
+- **set-function-length@1.2.2**
+  - Attribution: Jordan Harband — https://github.com/ljharb/set-function-length#readme
+- **set-function-name@2.0.2**
+  - Attribution: Jordan Harband — https://github.com/ljharb/set-function-name#readme
+- **set-proto@1.0.0**
+  - Attribution: Jordan Harband — https://github.com/ljharb/set-proto#readme
+- **shebang-command@2.0.0**
+  - Attribution: Kevin Mårtensson — https://github.com/kevva/shebang-command#readme
+- **shebang-regex@3.0.0**
+  - Attribution: Sindre Sorhus — https://github.com/sindresorhus/shebang-regex#readme
+- **side-channel@1.1.1**
+  - Attribution: Jordan Harband — https://github.com/ljharb/side-channel#readme
+- **side-channel-list@1.0.1**
+  - Attribution: Jordan Harband — https://github.com/ljharb/side-channel-list#readme
+- **side-channel-map@1.0.1**
+  - Attribution: Jordan Harband — https://github.com/ljharb/side-channel-map#readme
+- **side-channel-weakmap@1.0.2**
+  - Attribution: Jordan Harband — https://github.com/ljharb/side-channel-weakmap#readme
+- **simple-concat@1.0.1**
+  - Attribution: Feross Aboukhadijeh — https://github.com/feross/simple-concat
+- **simple-get@4.0.1**
+  - Attribution: Feross Aboukhadijeh — https://github.com/feross/simple-get
+- **sqlstring@2.3.3**
+  - Attribution: https://github.com/mysqljs/sqlstring#readme
+- **stable-hash@0.0.5**
+  - Attribution: Shu Ding — https://github.com/shuding/stable-hash#readme
+- **stackback@0.0.2**
+  - Attribution: Roman Shtylman — https://github.com/shtylman/node-stackback#readme
+- **std-env@3.10.0, 4.2.0**
+  - Attribution: https://github.com/unjs/std-env#readme
+- **stop-iteration-iterator@1.1.0**
+  - Attribution: Jordan Harband — https://github.com/ljharb/stop-iteration-iterator#readme
+- **streamx@2.28.0**
+  - Attribution: Mathias Buus — https://github.com/mafintosh/streamx
+- **string_decoder@1.1.1, 1.3.0**
+  - Attribution: https://github.com/nodejs/string_decoder
+- **string.prototype.includes@2.0.1**
+  - Attribution: Mathias Bynens — https://mths.be/includes
+- **string.prototype.matchall@4.0.12**
+  - Attribution: Jordan Harband — https://github.com/es-shims/String.prototype.matchAll#readme
+- **string.prototype.repeat@1.0.0**
+  - Attribution: Mathias Bynens — https://mths.be/repeat
+- **string.prototype.trim@1.2.11**
+  - Attribution: Jordan Harband — https://github.com/es-shims/String.prototype.trim#readme
+- **string.prototype.trimend@1.0.10**
+  - Attribution: Jordan Harband — https://github.com/es-shims/String.prototype.trimEnd#readme
+- **string.prototype.trimstart@1.0.8**
+  - Attribution: Jordan Harband — https://github.com/es-shims/String.prototype.trimStart#readme
+- **strip-bom@3.0.0**
+  - Attribution: Sindre Sorhus — https://github.com/sindresorhus/strip-bom#readme
+- **strip-json-comments@2.0.1, 3.1.1**
+  - Attribution: Sindre Sorhus — https://github.com/sindresorhus/strip-json-comments#readme
+- **styled-jsx@5.1.6**
+  - Attribution: https://github.com/vercel/styled-jsx#readme
+- **supports-color@7.2.0**
+  - Attribution: Sindre Sorhus — https://github.com/chalk/supports-color#readme
+- **supports-preserve-symlinks-flag@1.0.0**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/node-supports-preserve-symlinks-flag#readme
+- **symbol-tree@3.2.4**
+  - Attribution: Joris van der Wel — https://github.com/jsdom/js-symbol-tree#symbol-tree
+- **tailwind-merge@3.6.0**
+  - Attribution: Dany Castillo — https://github.com/dcastil/tailwind-merge
+- **tailwindcss@4.3.2**
+  - Attribution: https://tailwindcss.com
+- **tapable@2.3.3**
+  - Attribution: Tobias Koppers @sokra — https://github.com/webpack/tapable
+- **tar-fs@2.1.5**
+  - Attribution: Mathias Buus — https://github.com/mafintosh/tar-fs
+- **tar-stream@2.2.0, 3.2.0**
+  - Attribution: Mathias Buus — https://github.com/mafintosh/tar-stream
+- **teex@1.0.1**
+  - Attribution: Mathias Buus — https://github.com/mafintosh/teex
+- **tinybench@2.9.0**
+  - Attribution: https://github.com/tinylibs/tinybench#readme
+- **tinyexec@1.2.4**
+  - Attribution: James Garbutt — https://github.com/tinylibs/tinyexec#readme
+- **tinyglobby@0.2.17**
+  - Attribution: Superchupu — https://superchupu.dev/tinyglobby
+- **tinyrainbow@3.1.0**
+  - Attribution: https://github.com/tinylibs/tinyrainbow#readme
+- **tldts@7.4.8**
+  - Attribution: Rémi Berson — https://github.com/remusao/tldts#readme
+- **tldts-core@7.4.8**
+  - Attribution: Rémi Berson — https://github.com/remusao/tldts#readme
+- **to-regex-range@5.0.1**
+  - Attribution: Jon Schlinkert — https://github.com/micromatch/to-regex-range
+- **tr46@0.0.3, 6.0.0**
+  - Attribution: Sebastian Mayr — https://github.com/jsdom/tr46#readme
+- **ts-api-utils@2.5.0**
+  - Attribution: JoshuaKGoldberg — https://github.com/JoshuaKGoldberg/ts-api-utils#readme
+- **tsconfig-paths@3.15.0**
+  - Attribution: Jonas Kello — https://github.com/dividab/tsconfig-paths#readme
+- **tsx@4.23.1**
+  - Attribution: Hiroki Osame — https://tsx.hirok.io
+- **type-check@0.4.0**
+  - Attribution: George Zahariev — https://github.com/gkz/type-check
+- **typed-array-buffer@1.0.3**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/typed-array-buffer#readme
+- **typed-array-byte-length@1.0.3**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/typed-array-byte-length#readme
+- **typed-array-byte-offset@1.0.4**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/typed-array-byte-offset#readme
+- **typed-array-length@1.0.8**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/typed-array-length#readme
+- **typescript-eslint@8.64.0**
+  - Attribution: https://typescript-eslint.io/packages/typescript-eslint
+- **unbox-primitive@1.1.0**
+  - Attribution: Jordan Harband — https://github.com/ljharb/unbox-primitive#readme
+- **undici@7.29.0**
+  - Attribution: https://undici.nodejs.org
+- **undici-types@7.18.2, 8.3.0**
+  - Attribution: https://undici.nodejs.org
+- **unrs-resolver@1.12.2**
+  - Attribution: https://github.com/unrs/unrs-resolver
+- **update-browserslist-db@1.2.3**
+  - Attribution: Andrey Sitnik — https://github.com/browserslist/update-db#readme
+- **use-sync-external-store@1.6.0**
+  - Attribution: https://github.com/facebook/react#readme
+- **util-deprecate@1.0.2**
+  - Attribution: Nathan Rajlich — https://github.com/TooTallNate/util-deprecate
+- **valibot@1.4.2**
+  - Attribution: Fabian Hiller — https://valibot.dev
+- **vite@8.1.4**
+  - Attribution: Evan You — https://vite.dev
+- **vitest@4.1.10**
+  - Attribution: Anthony Fu — https://vitest.dev
+- **w3c-keyname@2.2.8**
+  - Attribution: Marijn Haverbeke — https://github.com/marijnh/w3c-keyname#readme
+- **w3c-xmlserializer@5.0.0**
+  - Attribution: https://github.com/jsdom/w3c-xmlserializer#readme
+- **whatwg-mimetype@5.0.0**
+  - Attribution: Domenic Denicola — https://github.com/jsdom/whatwg-mimetype#readme
+- **whatwg-url@5.0.0, 16.0.1**
+  - Attribution: Sebastian Mayr — https://github.com/jsdom/whatwg-url#readme
+- **which-boxed-primitive@1.1.1**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/which-boxed-primitive#readme
+- **which-builtin-type@1.2.1**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/which-builtin-type#readme
+- **which-collection@1.0.2**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/which-collection#readme
+- **which-typed-array@1.1.22**
+  - Attribution: Jordan Harband — https://github.com/inspect-js/which-typed-array#readme
+- **why-is-node-running@2.3.0**
+  - Attribution: Mathias Buus — https://github.com/mafintosh/why-is-node-running
+- **word-wrap@1.2.5**
+  - Attribution: Jon Schlinkert — https://github.com/jonschlinkert/word-wrap
+- **xmlchars@2.2.0**
+  - Attribution: Louis-Dominique Dubeau — https://github.com/lddubeau/xmlchars#readme
+- **yauzl@3.4.0**
+  - Attribution: Josh Wolfe — https://github.com/thejoshwolfe/yauzl
+- **yocto-queue@0.1.0**
+  - Attribution: Sindre Sorhus — https://github.com/sindresorhus/yocto-queue#readme
+- **zeptomatch@2.1.0**
+  - Attribution: https://github.com/fabiospampinato/zeptomatch#readme
+- **zip-stream@7.0.5**
+  - Attribution: Chris Talkington — https://github.com/archiverjs/node-zip-stream
+- **zlibjs@0.3.1**
+  - Attribution: Yuta Imaya — https://github.com/imaya/zlib.js
+- **zod@4.4.3**
+  - Attribution: Colin McDonnell — https://zod.dev
+- **zod-validation-error@4.0.2**
+  - Attribution: Dimitrios C. Michalakos — https://github.com/causaly/zod-validation-error#readme
+
+## MIT and ISC
+
+- **@visx/vendor@4.0.0-alpha.0**
+  - Attribution: @williaster — https://github.com/airbnb/visx#readme
+
+## MIT-0
+
+- **@csstools/color-helpers@6.1.0**
+  - Attribution: https://github.com/csstools/postcss-plugins/tree/main/packages/color-helpers#readme
+- **@csstools/css-syntax-patches-for-csstree@1.1.6**
+  - Attribution: https://github.com/csstools/postcss-plugins/tree/main/packages/css-syntax-patches-for-csstree#readme
+- **nodemailer@9.0.3**
+  - Attribution: Andris Reinman — https://nodemailer.com/
+
+## MPL-2.0
+
+- **axe-core@4.12.1**
+  - Attribution: https://www.deque.com/axe/
+- **lightningcss@1.32.0**
+  - Attribution: https://github.com/parcel-bundler/lightningcss#readme
+- **lightningcss-darwin-arm64@1.32.0**
+  - Attribution: https://github.com/parcel-bundler/lightningcss#readme
+
+## OFL-1.1
+
+- **@fontsource-variable/noto-sans-sc@5.3.0**
+  - Attribution: Google Inc. — https://fontsource.org/fonts/noto-sans-sc
+
+## Python-2.0
+
+- **argparse@2.0.1**
+  - Attribution: https://github.com/nodeca/argparse#readme
+
+## Unlicense
+
+- **postgres@3.4.7**
+  - Attribution: Rasmus Porsager — https://github.com/porsager/postgres
+- **robust-predicates@3.0.3**
+  - Attribution: Vladimir Agafonkin — https://github.com/mourner/robust-predicates#readme
+
+## Compliance note
+
+This file is an attribution aid, not a replacement for the license texts shipped by each package. The lockfile and `sbom.spdx.json` are the machine-readable dependency records. No GPL, AGPL, or LGPL source code is vendored by this project; platform-specific transitive binaries remain subject to their upstream licenses.

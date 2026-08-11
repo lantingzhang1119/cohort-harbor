@@ -1,0 +1,43 @@
+name: Bug report
+description: Report a reproducible CohortHarbor defect using synthetic data.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Do not include credentials, employee data, private documents, database files or `.env` contents. Security issues belong in a private advisory.
+  - type: textarea
+    id: outcome
+    attributes:
+      label: What happened?
+      description: Describe the actual and expected outcomes.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Provide the smallest steps and synthetic fixture needed to reproduce the issue.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Commit or release
+      placeholder: Commit SHA or release tag
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Include OS, browser, Node.js and pnpm versions. Redact local user paths.
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy check
+      options:
+        - label: I removed secrets, personal data, private documents and organization-confidential content.
+          required: true

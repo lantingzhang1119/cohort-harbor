@@ -1,0 +1,234 @@
+.scene {
+  position: relative;
+  width: 100%;
+  max-width: var(--portal-design-width);
+  margin: 0 auto;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.plane {
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: var(--portal-design-width);
+  height: var(--portal-design-height);
+  overflow: hidden;
+  background-repeat: no-repeat;
+  transform-origin: top left;
+  font-family: "Noto Sans SC Variable", "Noto Sans SC", sans-serif;
+}
+
+.element {
+  position: absolute;
+  box-sizing: border-box;
+  transform-origin: center;
+}
+
+.text {
+  display: block;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.shapeRoot {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.shapeFill,
+.triangleFill {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.triangleFill {
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+
+.shapeStroke {
+  position: absolute;
+  display: block;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.domStrokePath {
+  position: absolute;
+  inset: 0;
+  display: block;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.fallbackTriangleSide {
+  position: absolute;
+  display: block;
+  transform-origin: 0 50%;
+  pointer-events: none;
+}
+
+.vector {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.imageFrame {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #e5e7eb;
+}
+
+.imageFrame img {
+  position: absolute;
+  display: block;
+  max-width: none;
+  pointer-events: none;
+}
+
+.icon {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+}
+
+.icon svg {
+  width: min(100%, 100%);
+  height: min(100%, 100%);
+}
+
+.interactive {
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  border-radius: inherit;
+  cursor: pointer;
+  font: inherit;
+  text-align: inherit;
+  text-decoration: none;
+}
+
+.hitSlop {
+  position: absolute;
+  z-index: 4;
+  display: block;
+  background: transparent;
+  pointer-events: auto;
+}
+
+.interactive:focus-visible {
+  outline: max(2px, calc(2px / var(--portal-scale))) solid #0b6ed0;
+  outline-offset: max(2px, calc(2px / var(--portal-scale)));
+}
+
+.button {
+  padding: 0;
+  overflow: visible;
+}
+
+.buttonVisual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: visible;
+}
+
+.buttonFill {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+}
+
+.buttonText {
+  position: relative;
+  z-index: 2;
+  display: block;
+  box-sizing: border-box;
+}
+
+.marker {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+}
+
+.markerLabel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4em;
+  width: 100%;
+  height: 100%;
+  padding: 0.3em 0.7em;
+}
+
+.markerLabel svg {
+  width: 1.2em;
+  height: 1.2em;
+  flex: 0 0 auto;
+}
+
+.markerLabel .icon {
+  width: 1.2em;
+  height: 1.2em;
+  flex: 0 0 auto;
+}
+
+.markerDisclosure {
+  position: absolute;
+  z-index: 8;
+  width: max-content;
+  max-width: 280px;
+  padding: 12px 14px;
+  border: 1px solid #c9d8e3;
+  border-radius: 12px;
+  color: #113452;
+  background: #fff;
+  box-shadow: 0 12px 28px rgba(17, 52, 82, 0.18);
+}
+
+.markerDisclosure strong,
+.markerDisclosure span {
+  display: block;
+}
+
+.markerDisclosure span {
+  margin-top: 4px;
+  line-height: 1.5;
+}
+
+.error {
+  max-width: 720px;
+  margin: 24px auto;
+  padding: 20px;
+  border: 1px solid #f1c7c7;
+  border-radius: 16px;
+  color: #7b2525;
+  background: #fff8f8;
+  line-height: 1.7;
+}

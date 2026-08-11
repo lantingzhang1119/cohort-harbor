@@ -1,0 +1,19 @@
+version = 1
+
+[[annotations]]
+path = "**"
+precedence = "override"
+SPDX-FileCopyrightText = "2026 CohortHarbor contributors"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = ["vendor/fonts/NotoSansCJKsc-Regular.otf", "vendor/fonts/OFL.txt"]
+precedence = "override"
+SPDX-FileCopyrightText = "2014-2021 Adobe"
+SPDX-License-Identifier = "OFL-1.1"
+
+[[annotations]]
+path = "vendor/tessdata/*.traineddata"
+precedence = "override"
+SPDX-FileCopyrightText = "Tesseract OCR contributors"
+SPDX-License-Identifier = "Apache-2.0"

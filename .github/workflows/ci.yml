@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24.14.0
+          package-manager-cache: false
+      - name: Enable pinned pnpm
+        run: |
+          corepack enable
+          corepack prepare pnpm@11.16.0 --activate
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Lint
+        run: pnpm lint
+      - name: Typecheck
+        run: pnpm typecheck
+      - name: Unit and integration tests
+        run: pnpm test --maxWorkers=2
+      - name: Production build
+        run: pnpm build
+      - name: High-severity dependency audit
+        run: pnpm audit --audit-level high
+      - name: Verify third-party notices
+        run: |
+          pnpm licenses:generate
+          git diff --exit-code -- THIRD_PARTY_NOTICES.md
+      - name: Verify SPDX SBOM inventory
+        run: |
+          pnpm sbom --sbom-format spdx --lockfile-only --sbom-type application --out /tmp/cohort-harbor.spdx.json
+          node scripts/verify-spdx-sbom.mjs --expected sbom.spdx.json --actual /tmp/cohort-harbor.spdx.json
