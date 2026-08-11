@@ -74,7 +74,7 @@ describe("question bank local OCR runtime", () => {
     const svg = `
       <svg width="900" height="220" xmlns="http://www.w3.org/2000/svg">
         <rect width="100%" height="100%" fill="white"/>
-        <text x="40" y="120" font-size="72" font-family="Noto Sans SC, PingFang SC, sans-serif" fill="black">单选题</text>
+        <text x="40" y="120" font-size="72" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, sans-serif" fill="black">单选题</text>
       </svg>`;
     await sharp(Buffer.from(svg)).png().toFile(imagePath);
     const result = await runLocalOcr(imagePath, { languages: ["chi_sim", "eng"] });
@@ -135,7 +135,7 @@ for argument in "$@"; do prefix="$argument"; done
     const svg = `
       <svg width="1200" height="1000" xmlns="http://www.w3.org/2000/svg">
         <rect width="100%" height="100%" fill="white"/>
-        <g font-size="54" font-family="Noto Sans SC, PingFang SC, sans-serif" fill="black">
+        <g font-size="54" font-family="Noto Sans CJK SC, Noto Sans SC, PingFang SC, sans-serif" fill="black">
           <text x="70" y="100">中文扫描题库</text>
           <text x="70" y="200">1. [SINGLE] One plus one equals?</text>
           <text x="100" y="300">A. 1</text>

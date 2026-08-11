@@ -21,6 +21,13 @@ jobs:
       NEXT_TELEMETRY_DISABLED: "1"
     steps:
       - uses: actions/checkout@v6
+      - name: Install Linux OCR test runtime
+        run: |
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends --yes fontconfig poppler-utils
+          sudo install -d -m 0755 /usr/local/share/fonts
+          sudo install -m 0644 vendor/fonts/NotoSansCJKsc-Regular.otf /usr/local/share/fonts/NotoSansCJKsc-Regular.otf
+          sudo fc-cache -f
       - uses: actions/setup-node@v6
         with:
           node-version: 24.14.0
