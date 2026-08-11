@@ -52,7 +52,7 @@
     "@tiptap/react": "3.28.0",
     "@tiptap/starter-kit": "3.28.0",
     "archiver": "8.0.0",
-    "better-sqlite3": "12.11.1",
+    "better-sqlite3": "13.0.3",
     "clsx": "2.1.1",
     "date-fns": "4.4.0",
     "dotenv": "17.4.2",
