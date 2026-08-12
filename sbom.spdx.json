@@ -29,7 +29,7 @@
       "licenseDeclared": "MIT",
       "copyrightText": "NOASSERTION",
       "description": "Self-hosted employee onboarding, policy learning, and assessment platform.",
-      "homepage": "git+https://github.com/ailsazhang94-jpg/cohort-harbor.git"
+      "homepage": "git+https://github.com/lantingzhang1119/cohort-harbor.git"
     },
     {
       "SPDXID": "SPDXRef-Package--playwright-test-1.61.1-0",

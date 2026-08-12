@@ -6,7 +6,7 @@ Security fixes are applied to the latest commit on `main`. Until the first tagge
 
 ## Reporting a vulnerability
 
-Use [GitHub private vulnerability reporting](https://github.com/ailsazhang94-jpg/cohort-harbor/security/advisories/new). Do not open a public issue for a suspected vulnerability.
+Use [GitHub private vulnerability reporting](https://github.com/lantingzhang1119/cohort-harbor/security/advisories/new). Do not open a public issue for a suspected vulnerability.
 
 Include the affected route or component, prerequisites, impact, a minimal reproduction using synthetic data, and any suggested mitigation. Do not send live credentials, `.env` files, employee records, private documents, production database copies, SMTP transcripts, or access tokens.
 

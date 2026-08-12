@@ -2,8 +2,8 @@
 
 可自托管的员工入职、制度学习与考试平台。CohortHarbor 把员工账号、入职资料、制度版本、在线学习、考试任务、通知邮件和私有文件保护放在一个全栈应用中，适合内部部署、二次开发和开源协作。
 
-[![CI](https://github.com/ailsazhang94-jpg/cohort-harbor/actions/workflows/ci.yml/badge.svg)](https://github.com/ailsazhang94-jpg/cohort-harbor/actions/workflows/ci.yml)
-[![CodeQL](https://github.com/ailsazhang94-jpg/cohort-harbor/actions/workflows/codeql.yml/badge.svg)](https://github.com/ailsazhang94-jpg/cohort-harbor/actions/workflows/codeql.yml)
+[![CI](https://github.com/lantingzhang1119/cohort-harbor/actions/workflows/ci.yml/badge.svg)](https://github.com/lantingzhang1119/cohort-harbor/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/lantingzhang1119/cohort-harbor/actions/workflows/codeql.yml/badge.svg)](https://github.com/lantingzhang1119/cohort-harbor/actions/workflows/codeql.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-0f766e.svg)](LICENSE)
 
 > 当前仓库提供的是可公开使用的通用代码与 mock 数据。仓库不包含真实员工、生产数据库、企业制度原件或 SMTP/API 密钥；部署时请通过环境变量和私有存储注入组织自己的数据。
