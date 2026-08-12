@@ -50,7 +50,7 @@
     "@prisma/client": "7.9.1",
     "@tiptap/extension-image": "3.28.0",
     "@tiptap/react": "3.28.0",
-    "@tiptap/starter-kit": "3.28.0",
+    "@tiptap/starter-kit": "3.29.2",
     "archiver": "8.0.0",
     "better-sqlite3": "12.11.1",
     "clsx": "2.1.1",
